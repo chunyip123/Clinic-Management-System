@@ -36,14 +36,17 @@ Partial Class frmPatientList
         Me.txtSearchPatient = New System.Windows.Forms.TextBox()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.cboSearchPatient = New System.Windows.Forms.ComboBox()
+        Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.pnlTop.SuspendLayout()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblPatientList
         '
         Me.lblPatientList.AutoSize = True
         Me.lblPatientList.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPatientList.Location = New System.Drawing.Point(66, 85)
+        Me.lblPatientList.Location = New System.Drawing.Point(20, 87)
         Me.lblPatientList.Name = "lblPatientList"
         Me.lblPatientList.Size = New System.Drawing.Size(120, 26)
         Me.lblPatientList.TabIndex = 7
@@ -110,9 +113,9 @@ Partial Class frmPatientList
         '
         Me.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddPatient.ForeColor = System.Drawing.Color.White
-        Me.btnAddPatient.Location = New System.Drawing.Point(71, 133)
+        Me.btnAddPatient.Location = New System.Drawing.Point(22, 136)
         Me.btnAddPatient.Name = "btnAddPatient"
         Me.btnAddPatient.Size = New System.Drawing.Size(135, 51)
         Me.btnAddPatient.TabIndex = 9
@@ -125,7 +128,7 @@ Partial Class frmPatientList
         Me.cboSortPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSortPatient.ForeColor = System.Drawing.Color.White
         Me.cboSortPatient.FormattingEnabled = True
-        Me.cboSortPatient.Location = New System.Drawing.Point(71, 204)
+        Me.cboSortPatient.Location = New System.Drawing.Point(22, 221)
         Me.cboSortPatient.Name = "cboSortPatient"
         Me.cboSortPatient.Size = New System.Drawing.Size(118, 26)
         Me.cboSortPatient.TabIndex = 11
@@ -174,11 +177,35 @@ Partial Class frmPatientList
         Me.cboSearchPatient.TabIndex = 15
         Me.cboSearchPatient.Text = "Search By"
         '
+        'dgv
+        '
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Location = New System.Drawing.Point(12, 261)
+        Me.dgv.Name = "dgv"
+        Me.dgv.RowTemplate.Height = 24
+        Me.dgv.Size = New System.Drawing.Size(1161, 405)
+        Me.dgv.TabIndex = 16
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBack.ForeColor = System.Drawing.Color.White
+        Me.btnBack.Location = New System.Drawing.Point(1017, 677)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(156, 62)
+        Me.btnBack.TabIndex = 17
+        Me.btnBack.Text = "Back to Dashboard"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
         'frmPatientList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1185, 696)
+        Me.ClientSize = New System.Drawing.Size(1185, 746)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.cboSearchPatient)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.txtSearchPatient)
@@ -192,6 +219,7 @@ Partial Class frmPatientList
         Me.Text = "frmPatientList"
         Me.pnlTop.ResumeLayout(False)
         Me.pnlTop.PerformLayout()
+        CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -209,4 +237,6 @@ Partial Class frmPatientList
     Friend WithEvents txtSearchPatient As TextBox
     Friend WithEvents btnSearch As Button
     Friend WithEvents cboSearchPatient As ComboBox
+    Friend WithEvents dgv As DataGridView
+    Friend WithEvents btnBack As Button
 End Class

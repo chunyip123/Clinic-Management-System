@@ -138,7 +138,7 @@ Partial Class frmMenu
         '
         Me.lblUsername.AutoSize = True
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.Location = New System.Drawing.Point(946, 23)
+        Me.lblUsername.Location = New System.Drawing.Point(900, 23)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(0, 20)
         Me.lblUsername.TabIndex = 4

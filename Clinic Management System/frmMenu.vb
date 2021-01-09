@@ -6,7 +6,8 @@ Public Class frmMenu
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnPatients.Click
-
+        Me.Hide()
+        frmPatientList.Show()
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
