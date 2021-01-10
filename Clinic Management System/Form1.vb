@@ -39,8 +39,7 @@ Public Class frmRecLogin
     End Sub
 
     Private Sub Check_Database()
-        Dim str As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Chunyip\Desktop\Clinic Management System\Clinic Management System\CMSDatabase.mdf;Integrated Security=True"
-
+        Dim str As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CMSDatabase.mdf;Integrated Security=True"
         Dim sql As String = "select count(*) from Employee where UserName=@username and Password=@password"
         Using Conn As New SqlConnection(str)
             Using cmd As New SqlCommand(sql, Conn)
