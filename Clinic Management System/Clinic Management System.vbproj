@@ -14,6 +14,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -95,11 +95,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CMSDatabase.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPatient.Designer.vb">
+      <DependentUpon>frmAddPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPatient.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenu.Designer.vb">
@@ -108,10 +114,22 @@
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPatientDetails.Designer.vb">
+      <DependentUpon>frmPatientDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmPatientList.Designer.vb">
       <DependentUpon>frmPatientList.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPatientList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePatient.Designer.vb">
+      <DependentUpon>frmUpdatePatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdatePatient.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -131,14 +149,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPatient.resx">
+      <DependentUpon>frmAddPatient.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientDetails.resx">
+      <DependentUpon>frmPatientDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPatientList.resx">
       <DependentUpon>frmPatientList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdatePatient.resx">
+      <DependentUpon>frmUpdatePatient.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

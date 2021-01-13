@@ -73,17 +73,17 @@ Partial Public Class CMSDatabaseDataContext
     End Sub
   Partial Private Sub DeletePanelOrganisation(instance As PanelOrganisation)
     End Sub
-  Partial Private Sub InsertPatient(instance As Patient)
-    End Sub
-  Partial Private Sub UpdatePatient(instance As Patient)
-    End Sub
-  Partial Private Sub DeletePatient(instance As Patient)
-    End Sub
   Partial Private Sub InsertPayment(instance As Payment)
     End Sub
   Partial Private Sub UpdatePayment(instance As Payment)
     End Sub
   Partial Private Sub DeletePayment(instance As Payment)
+    End Sub
+  Partial Private Sub InsertPatient(instance As Patient)
+    End Sub
+  Partial Private Sub UpdatePatient(instance As Patient)
+    End Sub
+  Partial Private Sub DeletePatient(instance As Patient)
     End Sub
   #End Region
 	
@@ -154,15 +154,15 @@ Partial Public Class CMSDatabaseDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property Patients() As System.Data.Linq.Table(Of Patient)
-		Get
-			Return Me.GetTable(Of Patient)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Payments() As System.Data.Linq.Table(Of Payment)
 		Get
 			Return Me.GetTable(Of Payment)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Patients() As System.Data.Linq.Table(Of Patient)
+		Get
+			Return Me.GetTable(Of Patient)
 		End Get
 	End Property
 End Class
@@ -1672,6 +1672,111 @@ Partial Public Class PanelOrganisation
 	End Sub
 End Class
 
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Payment")>  _
+Partial Public Class Payment
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PaymentId As String
+	
+	Private _PayMethod As String
+	
+	Private _PaymentAmount As System.Nullable(Of Decimal)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPaymentIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnPaymentIdChanged()
+    End Sub
+    Partial Private Sub OnPayMethodChanging(value As String)
+    End Sub
+    Partial Private Sub OnPayMethodChanged()
+    End Sub
+    Partial Private Sub OnPaymentAmountChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnPaymentAmountChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PaymentId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property PaymentId() As String
+		Get
+			Return Me._PaymentId
+		End Get
+		Set
+			If (String.Equals(Me._PaymentId, value) = false) Then
+				Me.OnPaymentIdChanging(value)
+				Me.SendPropertyChanging
+				Me._PaymentId = value
+				Me.SendPropertyChanged("PaymentId")
+				Me.OnPaymentIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PayMethod", DbType:="VarChar(13)")>  _
+	Public Property PayMethod() As String
+		Get
+			Return Me._PayMethod
+		End Get
+		Set
+			If (String.Equals(Me._PayMethod, value) = false) Then
+				Me.OnPayMethodChanging(value)
+				Me.SendPropertyChanging
+				Me._PayMethod = value
+				Me.SendPropertyChanged("PayMethod")
+				Me.OnPayMethodChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PaymentAmount", DbType:="Decimal(10,2)")>  _
+	Public Property PaymentAmount() As System.Nullable(Of Decimal)
+		Get
+			Return Me._PaymentAmount
+		End Get
+		Set
+			If (Me._PaymentAmount.Equals(value) = false) Then
+				Me.OnPaymentAmountChanging(value)
+				Me.SendPropertyChanging
+				Me._PaymentAmount = value
+				Me.SendPropertyChanged("PaymentAmount")
+				Me.OnPaymentAmountChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Patient")>  _
 Partial Public Class Patient
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -1688,13 +1793,15 @@ Partial Public Class Patient
 	
 	Private _Age As String
 	
-	Private _Gender As System.Nullable(Of Char)
+	Private _Gender As String
 	
 	Private _ContactNo As String
 	
 	Private _EmailAdd As String
 	
 	Private _Address As String
+	
+	Private _City As String
 	
 	Private _State As String
 	
@@ -1727,7 +1834,7 @@ Partial Public Class Patient
     End Sub
     Partial Private Sub OnAgeChanged()
     End Sub
-    Partial Private Sub OnGenderChanging(value As System.Nullable(Of Char))
+    Partial Private Sub OnGenderChanging(value As String)
     End Sub
     Partial Private Sub OnGenderChanged()
     End Sub
@@ -1742,6 +1849,10 @@ Partial Public Class Patient
     Partial Private Sub OnAddressChanging(value As String)
     End Sub
     Partial Private Sub OnAddressChanged()
+    End Sub
+    Partial Private Sub OnCityChanging(value As String)
+    End Sub
+    Partial Private Sub OnCityChanged()
     End Sub
     Partial Private Sub OnStateChanging(value As String)
     End Sub
@@ -1838,13 +1949,13 @@ Partial Public Class Patient
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Gender", DbType:="Char(1)")>  _
-	Public Property Gender() As System.Nullable(Of Char)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Gender", DbType:="VarChar(6)")>  _
+	Public Property Gender() As String
 		Get
 			Return Me._Gender
 		End Get
 		Set
-			If (Me._Gender.Equals(value) = false) Then
+			If (String.Equals(Me._Gender, value) = false) Then
 				Me.OnGenderChanging(value)
 				Me.SendPropertyChanging
 				Me._Gender = value
@@ -1902,6 +2013,22 @@ Partial Public Class Patient
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_City", DbType:="VarChar(20)")>  _
+	Public Property City() As String
+		Get
+			Return Me._City
+		End Get
+		Set
+			If (String.Equals(Me._City, value) = false) Then
+				Me.OnCityChanging(value)
+				Me.SendPropertyChanging
+				Me._City = value
+				Me.SendPropertyChanged("City")
+				Me.OnCityChanged
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_State", DbType:="VarChar(20)")>  _
 	Public Property State() As String
 		Get
@@ -1930,111 +2057,6 @@ Partial Public Class Patient
 				Me._PostCode = value
 				Me.SendPropertyChanged("PostCode")
 				Me.OnPostCodeChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Payment")>  _
-Partial Public Class Payment
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PaymentId As String
-	
-	Private _PayMethod As String
-	
-	Private _PaymentAmount As System.Nullable(Of Decimal)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPaymentIdChanging(value As String)
-    End Sub
-    Partial Private Sub OnPaymentIdChanged()
-    End Sub
-    Partial Private Sub OnPayMethodChanging(value As String)
-    End Sub
-    Partial Private Sub OnPayMethodChanged()
-    End Sub
-    Partial Private Sub OnPaymentAmountChanging(value As System.Nullable(Of Decimal))
-    End Sub
-    Partial Private Sub OnPaymentAmountChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PaymentId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property PaymentId() As String
-		Get
-			Return Me._PaymentId
-		End Get
-		Set
-			If (String.Equals(Me._PaymentId, value) = false) Then
-				Me.OnPaymentIdChanging(value)
-				Me.SendPropertyChanging
-				Me._PaymentId = value
-				Me.SendPropertyChanged("PaymentId")
-				Me.OnPaymentIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PayMethod", DbType:="VarChar(13)")>  _
-	Public Property PayMethod() As String
-		Get
-			Return Me._PayMethod
-		End Get
-		Set
-			If (String.Equals(Me._PayMethod, value) = false) Then
-				Me.OnPayMethodChanging(value)
-				Me.SendPropertyChanging
-				Me._PayMethod = value
-				Me.SendPropertyChanged("PayMethod")
-				Me.OnPayMethodChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PaymentAmount", DbType:="Decimal(10,2)")>  _
-	Public Property PaymentAmount() As System.Nullable(Of Decimal)
-		Get
-			Return Me._PaymentAmount
-		End Get
-		Set
-			If (Me._PaymentAmount.Equals(value) = false) Then
-				Me.OnPaymentAmountChanging(value)
-				Me.SendPropertyChanging
-				Me._PaymentAmount = value
-				Me.SendPropertyChanged("PaymentAmount")
-				Me.OnPaymentAmountChanged
 			End If
 		End Set
 	End Property

@@ -84,6 +84,13 @@
       <Column Name="OrgNature" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="PaymentId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PayMethod" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="PaymentAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Patient" Member="Patients">
     <Type Name="Patient">
       <Column Name="PatientId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -91,19 +98,13 @@
       <Column Name="LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="IcNo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
       <Column Name="Age" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
       <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="EmailAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="State" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="PostCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Payment" Member="Payments">
-    <Type Name="Payment">
-      <Column Name="PaymentId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PayMethod" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
-      <Column Name="PaymentAmount" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPatientList
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmPatientList
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.lblPatientList = New System.Windows.Forms.Label()
@@ -38,6 +38,7 @@ Partial Class frmPatientList
         Me.cboSearchPatient = New System.Windows.Forms.ComboBox()
         Me.dgv = New System.Windows.Forms.DataGridView()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.lblResultsNo = New System.Windows.Forms.Label()
         Me.pnlTop.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -117,7 +118,7 @@ Partial Class frmPatientList
         Me.btnAddPatient.ForeColor = System.Drawing.Color.White
         Me.btnAddPatient.Location = New System.Drawing.Point(22, 136)
         Me.btnAddPatient.Name = "btnAddPatient"
-        Me.btnAddPatient.Size = New System.Drawing.Size(135, 51)
+        Me.btnAddPatient.Size = New System.Drawing.Size(151, 51)
         Me.btnAddPatient.TabIndex = 9
         Me.btnAddPatient.Text = "Add Patient"
         Me.btnAddPatient.UseVisualStyleBackColor = False
@@ -138,7 +139,7 @@ Partial Class frmPatientList
         '
         Me.lblSearchPatient.AutoSize = True
         Me.lblSearchPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSearchPatient.Location = New System.Drawing.Point(867, 227)
+        Me.lblSearchPatient.Location = New System.Drawing.Point(859, 227)
         Me.lblSearchPatient.Name = "lblSearchPatient"
         Me.lblSearchPatient.Size = New System.Drawing.Size(72, 20)
         Me.lblSearchPatient.TabIndex = 12
@@ -147,7 +148,7 @@ Partial Class frmPatientList
         'txtSearchPatient
         '
         Me.txtSearchPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearchPatient.Location = New System.Drawing.Point(939, 224)
+        Me.txtSearchPatient.Location = New System.Drawing.Point(931, 224)
         Me.txtSearchPatient.Name = "txtSearchPatient"
         Me.txtSearchPatient.Size = New System.Drawing.Size(164, 27)
         Me.txtSearchPatient.TabIndex = 13
@@ -158,9 +159,9 @@ Partial Class frmPatientList
         Me.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSearch.ForeColor = System.Drawing.Color.White
-        Me.btnSearch.Location = New System.Drawing.Point(1104, 223)
+        Me.btnSearch.Location = New System.Drawing.Point(1101, 223)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(73, 29)
+        Me.btnSearch.Size = New System.Drawing.Size(76, 29)
         Me.btnSearch.TabIndex = 14
         Me.btnSearch.Text = "Search"
         Me.btnSearch.UseVisualStyleBackColor = False
@@ -171,7 +172,7 @@ Partial Class frmPatientList
         Me.cboSearchPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSearchPatient.ForeColor = System.Drawing.Color.White
         Me.cboSearchPatient.FormattingEnabled = True
-        Me.cboSearchPatient.Location = New System.Drawing.Point(871, 192)
+        Me.cboSearchPatient.Location = New System.Drawing.Point(863, 192)
         Me.cboSearchPatient.Name = "cboSearchPatient"
         Me.cboSearchPatient.Size = New System.Drawing.Size(118, 26)
         Me.cboSearchPatient.TabIndex = 15
@@ -199,11 +200,21 @@ Partial Class frmPatientList
         Me.btnBack.Text = "Back to Dashboard"
         Me.btnBack.UseVisualStyleBackColor = False
         '
+        'lblResultsNo
+        '
+        Me.lblResultsNo.AutoSize = True
+        Me.lblResultsNo.Location = New System.Drawing.Point(12, 677)
+        Me.lblResultsNo.Name = "lblResultsNo"
+        Me.lblResultsNo.Size = New System.Drawing.Size(67, 17)
+        Me.lblResultsNo.TabIndex = 18
+        Me.lblResultsNo.Text = "0 Results"
+        '
         'frmPatientList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1185, 746)
+        Me.Controls.Add(Me.lblResultsNo)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.cboSearchPatient)
@@ -239,4 +250,5 @@ Partial Class frmPatientList
     Friend WithEvents cboSearchPatient As ComboBox
     Friend WithEvents dgv As DataGridView
     Friend WithEvents btnBack As Button
+    Friend WithEvents lblResultsNo As Label
 End Class
