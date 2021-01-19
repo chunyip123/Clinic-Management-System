@@ -30,16 +30,6 @@
       <Column Name="PostCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Inventory" Member="Inventories">
-    <Type Name="Inventory">
-      <Column Name="ItemId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ItemName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="ItemDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ExpiryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Medical" Member="Medicals">
     <Type Name="Medical">
       <Column Name="MedicalId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -74,16 +64,6 @@
       <Column Name="PaymentStatus" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PanelOrganisation" Member="PanelOrganisations">
-    <Type Name="PanelOrganisation">
-      <Column Name="PanelId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="OrgName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="OrgCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="CoverLimit" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
-      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="OrgNature" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Payment" Member="Payments">
     <Type Name="Payment">
       <Column Name="PaymentId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -105,6 +85,26 @@
       <Column Name="City" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="State" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="PostCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PanelOrganisation" Member="PanelOrganisations">
+    <Type Name="PanelOrganisation">
+      <Column Name="PanelId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrgName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OrgCode" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CoverLimit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="OrgNature" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inventory" Member="Inventories">
+    <Type Name="Inventory">
+      <Column Name="ItemId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ItemDescription" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

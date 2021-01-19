@@ -51,7 +51,7 @@ Public Class frmRecLogin
                     GlobalVariables.loginuser = txtUsername.Text
                     Me.Hide()
                     frmMenu.Show()
-                    MessageBox.Show("Login sucessfully!")
+                    ''MessageBox.Show("Login sucessfully!")
                 Else
                     MessageBox.Show("Please key in the valid Username or Password.")
                 End If
@@ -68,5 +68,9 @@ Public Class frmRecLogin
         txtUsername.Text = ""
         txtPassword.Text = ""
         txtUsername.Focus()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

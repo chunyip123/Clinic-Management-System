@@ -43,12 +43,6 @@ Partial Public Class CMSDatabaseDataContext
     End Sub
   Partial Private Sub DeleteEmployee(instance As Employee)
     End Sub
-  Partial Private Sub InsertInventory(instance As Inventory)
-    End Sub
-  Partial Private Sub UpdateInventory(instance As Inventory)
-    End Sub
-  Partial Private Sub DeleteInventory(instance As Inventory)
-    End Sub
   Partial Private Sub InsertMedical(instance As Medical)
     End Sub
   Partial Private Sub UpdateMedical(instance As Medical)
@@ -67,12 +61,6 @@ Partial Public Class CMSDatabaseDataContext
     End Sub
   Partial Private Sub DeleteOrder(instance As [Order])
     End Sub
-  Partial Private Sub InsertPanelOrganisation(instance As PanelOrganisation)
-    End Sub
-  Partial Private Sub UpdatePanelOrganisation(instance As PanelOrganisation)
-    End Sub
-  Partial Private Sub DeletePanelOrganisation(instance As PanelOrganisation)
-    End Sub
   Partial Private Sub InsertPayment(instance As Payment)
     End Sub
   Partial Private Sub UpdatePayment(instance As Payment)
@@ -84,6 +72,18 @@ Partial Public Class CMSDatabaseDataContext
   Partial Private Sub UpdatePatient(instance As Patient)
     End Sub
   Partial Private Sub DeletePatient(instance As Patient)
+    End Sub
+  Partial Private Sub InsertPanelOrganisation(instance As PanelOrganisation)
+    End Sub
+  Partial Private Sub UpdatePanelOrganisation(instance As PanelOrganisation)
+    End Sub
+  Partial Private Sub DeletePanelOrganisation(instance As PanelOrganisation)
+    End Sub
+  Partial Private Sub InsertInventory(instance As Inventory)
+    End Sub
+  Partial Private Sub UpdateInventory(instance As Inventory)
+    End Sub
+  Partial Private Sub DeleteInventory(instance As Inventory)
     End Sub
   #End Region
 	
@@ -124,12 +124,6 @@ Partial Public Class CMSDatabaseDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property Inventories() As System.Data.Linq.Table(Of Inventory)
-		Get
-			Return Me.GetTable(Of Inventory)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Medicals() As System.Data.Linq.Table(Of Medical)
 		Get
 			Return Me.GetTable(Of Medical)
@@ -148,12 +142,6 @@ Partial Public Class CMSDatabaseDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property PanelOrganisations() As System.Data.Linq.Table(Of PanelOrganisation)
-		Get
-			Return Me.GetTable(Of PanelOrganisation)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Payments() As System.Data.Linq.Table(Of Payment)
 		Get
 			Return Me.GetTable(Of Payment)
@@ -163,6 +151,18 @@ Partial Public Class CMSDatabaseDataContext
 	Public ReadOnly Property Patients() As System.Data.Linq.Table(Of Patient)
 		Get
 			Return Me.GetTable(Of Patient)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PanelOrganisations() As System.Data.Linq.Table(Of PanelOrganisation)
+		Get
+			Return Me.GetTable(Of PanelOrganisation)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Inventories() As System.Data.Linq.Table(Of Inventory)
+		Get
+			Return Me.GetTable(Of Inventory)
 		End Get
 	End Property
 End Class
@@ -706,177 +706,6 @@ Partial Public Class Employee
 				Me._PostCode = value
 				Me.SendPropertyChanged("PostCode")
 				Me.OnPostCodeChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Inventory")>  _
-Partial Public Class Inventory
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _ItemId As String
-	
-	Private _ItemName As String
-	
-	Private _ItemDescription As String
-	
-	Private _UnitPrice As System.Nullable(Of Decimal)
-	
-	Private _Quantity As System.Nullable(Of Integer)
-	
-	Private _ExpiryDate As System.Nullable(Of Date)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnItemIdChanging(value As String)
-    End Sub
-    Partial Private Sub OnItemIdChanged()
-    End Sub
-    Partial Private Sub OnItemNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnItemNameChanged()
-    End Sub
-    Partial Private Sub OnItemDescriptionChanging(value As String)
-    End Sub
-    Partial Private Sub OnItemDescriptionChanged()
-    End Sub
-    Partial Private Sub OnUnitPriceChanging(value As System.Nullable(Of Decimal))
-    End Sub
-    Partial Private Sub OnUnitPriceChanged()
-    End Sub
-    Partial Private Sub OnQuantityChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnQuantityChanged()
-    End Sub
-    Partial Private Sub OnExpiryDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnExpiryDateChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property ItemId() As String
-		Get
-			Return Me._ItemId
-		End Get
-		Set
-			If (String.Equals(Me._ItemId, value) = false) Then
-				Me.OnItemIdChanging(value)
-				Me.SendPropertyChanging
-				Me._ItemId = value
-				Me.SendPropertyChanged("ItemId")
-				Me.OnItemIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemName", DbType:="VarChar(20)")>  _
-	Public Property ItemName() As String
-		Get
-			Return Me._ItemName
-		End Get
-		Set
-			If (String.Equals(Me._ItemName, value) = false) Then
-				Me.OnItemNameChanging(value)
-				Me.SendPropertyChanging
-				Me._ItemName = value
-				Me.SendPropertyChanged("ItemName")
-				Me.OnItemNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemDescription", DbType:="VarChar(100)")>  _
-	Public Property ItemDescription() As String
-		Get
-			Return Me._ItemDescription
-		End Get
-		Set
-			If (String.Equals(Me._ItemDescription, value) = false) Then
-				Me.OnItemDescriptionChanging(value)
-				Me.SendPropertyChanging
-				Me._ItemDescription = value
-				Me.SendPropertyChanged("ItemDescription")
-				Me.OnItemDescriptionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UnitPrice", DbType:="Decimal(10,2)")>  _
-	Public Property UnitPrice() As System.Nullable(Of Decimal)
-		Get
-			Return Me._UnitPrice
-		End Get
-		Set
-			If (Me._UnitPrice.Equals(value) = false) Then
-				Me.OnUnitPriceChanging(value)
-				Me.SendPropertyChanging
-				Me._UnitPrice = value
-				Me.SendPropertyChanged("UnitPrice")
-				Me.OnUnitPriceChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Int")>  _
-	Public Property Quantity() As System.Nullable(Of Integer)
-		Get
-			Return Me._Quantity
-		End Get
-		Set
-			If (Me._Quantity.Equals(value) = false) Then
-				Me.OnQuantityChanging(value)
-				Me.SendPropertyChanging
-				Me._Quantity = value
-				Me.SendPropertyChanged("Quantity")
-				Me.OnQuantityChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ExpiryDate", DbType:="DateTime")>  _
-	Public Property ExpiryDate() As System.Nullable(Of Date)
-		Get
-			Return Me._ExpiryDate
-		End Get
-		Set
-			If (Me._ExpiryDate.Equals(value) = false) Then
-				Me.OnExpiryDateChanging(value)
-				Me.SendPropertyChanging
-				Me._ExpiryDate = value
-				Me.SendPropertyChanged("ExpiryDate")
-				Me.OnExpiryDateChanged
 			End If
 		End Set
 	End Property
@@ -1501,177 +1330,6 @@ Partial Public Class [Order]
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PanelOrganisation")>  _
-Partial Public Class PanelOrganisation
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PanelId As String
-	
-	Private _OrgName As String
-	
-	Private _OrgCode As String
-	
-	Private _CoverLimit As System.Nullable(Of Decimal)
-	
-	Private _ContactNo As String
-	
-	Private _OrgNature As String
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPanelIdChanging(value As String)
-    End Sub
-    Partial Private Sub OnPanelIdChanged()
-    End Sub
-    Partial Private Sub OnOrgNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnOrgNameChanged()
-    End Sub
-    Partial Private Sub OnOrgCodeChanging(value As String)
-    End Sub
-    Partial Private Sub OnOrgCodeChanged()
-    End Sub
-    Partial Private Sub OnCoverLimitChanging(value As System.Nullable(Of Decimal))
-    End Sub
-    Partial Private Sub OnCoverLimitChanged()
-    End Sub
-    Partial Private Sub OnContactNoChanging(value As String)
-    End Sub
-    Partial Private Sub OnContactNoChanged()
-    End Sub
-    Partial Private Sub OnOrgNatureChanging(value As String)
-    End Sub
-    Partial Private Sub OnOrgNatureChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PanelId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property PanelId() As String
-		Get
-			Return Me._PanelId
-		End Get
-		Set
-			If (String.Equals(Me._PanelId, value) = false) Then
-				Me.OnPanelIdChanging(value)
-				Me.SendPropertyChanging
-				Me._PanelId = value
-				Me.SendPropertyChanged("PanelId")
-				Me.OnPanelIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrgName", DbType:="VarChar(50)")>  _
-	Public Property OrgName() As String
-		Get
-			Return Me._OrgName
-		End Get
-		Set
-			If (String.Equals(Me._OrgName, value) = false) Then
-				Me.OnOrgNameChanging(value)
-				Me.SendPropertyChanging
-				Me._OrgName = value
-				Me.SendPropertyChanged("OrgName")
-				Me.OnOrgNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrgCode", DbType:="VarChar(15)")>  _
-	Public Property OrgCode() As String
-		Get
-			Return Me._OrgCode
-		End Get
-		Set
-			If (String.Equals(Me._OrgCode, value) = false) Then
-				Me.OnOrgCodeChanging(value)
-				Me.SendPropertyChanging
-				Me._OrgCode = value
-				Me.SendPropertyChanged("OrgCode")
-				Me.OnOrgCodeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CoverLimit", DbType:="Decimal(10,2)")>  _
-	Public Property CoverLimit() As System.Nullable(Of Decimal)
-		Get
-			Return Me._CoverLimit
-		End Get
-		Set
-			If (Me._CoverLimit.Equals(value) = false) Then
-				Me.OnCoverLimitChanging(value)
-				Me.SendPropertyChanging
-				Me._CoverLimit = value
-				Me.SendPropertyChanged("CoverLimit")
-				Me.OnCoverLimitChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ContactNo", DbType:="VarChar(12)")>  _
-	Public Property ContactNo() As String
-		Get
-			Return Me._ContactNo
-		End Get
-		Set
-			If (String.Equals(Me._ContactNo, value) = false) Then
-				Me.OnContactNoChanging(value)
-				Me.SendPropertyChanging
-				Me._ContactNo = value
-				Me.SendPropertyChanged("ContactNo")
-				Me.OnContactNoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrgNature", DbType:="VarChar(30)")>  _
-	Public Property OrgNature() As String
-		Get
-			Return Me._OrgNature
-		End Get
-		Set
-			If (String.Equals(Me._OrgNature, value) = false) Then
-				Me.OnOrgNatureChanging(value)
-				Me.SendPropertyChanging
-				Me._OrgNature = value
-				Me.SendPropertyChanged("OrgNature")
-				Me.OnOrgNatureChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Payment")>  _
 Partial Public Class Payment
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -2057,6 +1715,348 @@ Partial Public Class Patient
 				Me._PostCode = value
 				Me.SendPropertyChanged("PostCode")
 				Me.OnPostCodeChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PanelOrganisation")>  _
+Partial Public Class PanelOrganisation
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PanelId As String
+	
+	Private _OrgName As String
+	
+	Private _OrgCode As String
+	
+	Private _CoverLimit As System.Nullable(Of Integer)
+	
+	Private _ContactNo As String
+	
+	Private _OrgNature As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPanelIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnPanelIdChanged()
+    End Sub
+    Partial Private Sub OnOrgNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnOrgNameChanged()
+    End Sub
+    Partial Private Sub OnOrgCodeChanging(value As String)
+    End Sub
+    Partial Private Sub OnOrgCodeChanged()
+    End Sub
+    Partial Private Sub OnCoverLimitChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnCoverLimitChanged()
+    End Sub
+    Partial Private Sub OnContactNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnContactNoChanged()
+    End Sub
+    Partial Private Sub OnOrgNatureChanging(value As String)
+    End Sub
+    Partial Private Sub OnOrgNatureChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PanelId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property PanelId() As String
+		Get
+			Return Me._PanelId
+		End Get
+		Set
+			If (String.Equals(Me._PanelId, value) = false) Then
+				Me.OnPanelIdChanging(value)
+				Me.SendPropertyChanging
+				Me._PanelId = value
+				Me.SendPropertyChanged("PanelId")
+				Me.OnPanelIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrgName", DbType:="VarChar(50)")>  _
+	Public Property OrgName() As String
+		Get
+			Return Me._OrgName
+		End Get
+		Set
+			If (String.Equals(Me._OrgName, value) = false) Then
+				Me.OnOrgNameChanging(value)
+				Me.SendPropertyChanging
+				Me._OrgName = value
+				Me.SendPropertyChanged("OrgName")
+				Me.OnOrgNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrgCode", DbType:="VarChar(15)")>  _
+	Public Property OrgCode() As String
+		Get
+			Return Me._OrgCode
+		End Get
+		Set
+			If (String.Equals(Me._OrgCode, value) = false) Then
+				Me.OnOrgCodeChanging(value)
+				Me.SendPropertyChanging
+				Me._OrgCode = value
+				Me.SendPropertyChanged("OrgCode")
+				Me.OnOrgCodeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CoverLimit", DbType:="Int")>  _
+	Public Property CoverLimit() As System.Nullable(Of Integer)
+		Get
+			Return Me._CoverLimit
+		End Get
+		Set
+			If (Me._CoverLimit.Equals(value) = false) Then
+				Me.OnCoverLimitChanging(value)
+				Me.SendPropertyChanging
+				Me._CoverLimit = value
+				Me.SendPropertyChanged("CoverLimit")
+				Me.OnCoverLimitChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ContactNo", DbType:="VarChar(12)")>  _
+	Public Property ContactNo() As String
+		Get
+			Return Me._ContactNo
+		End Get
+		Set
+			If (String.Equals(Me._ContactNo, value) = false) Then
+				Me.OnContactNoChanging(value)
+				Me.SendPropertyChanging
+				Me._ContactNo = value
+				Me.SendPropertyChanged("ContactNo")
+				Me.OnContactNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_OrgNature", DbType:="VarChar(50)")>  _
+	Public Property OrgNature() As String
+		Get
+			Return Me._OrgNature
+		End Get
+		Set
+			If (String.Equals(Me._OrgNature, value) = false) Then
+				Me.OnOrgNatureChanging(value)
+				Me.SendPropertyChanging
+				Me._OrgNature = value
+				Me.SendPropertyChanged("OrgNature")
+				Me.OnOrgNatureChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Inventory")>  _
+Partial Public Class Inventory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ItemId As String
+	
+	Private _ItemName As String
+	
+	Private _ItemDescription As String
+	
+	Private _UnitPrice As System.Nullable(Of Decimal)
+	
+	Private _Quantity As System.Nullable(Of Integer)
+	
+	Private _ExpiryDate As System.Nullable(Of Date)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnItemIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnItemIdChanged()
+    End Sub
+    Partial Private Sub OnItemNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnItemNameChanged()
+    End Sub
+    Partial Private Sub OnItemDescriptionChanging(value As String)
+    End Sub
+    Partial Private Sub OnItemDescriptionChanged()
+    End Sub
+    Partial Private Sub OnUnitPriceChanging(value As System.Nullable(Of Decimal))
+    End Sub
+    Partial Private Sub OnUnitPriceChanged()
+    End Sub
+    Partial Private Sub OnQuantityChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnQuantityChanged()
+    End Sub
+    Partial Private Sub OnExpiryDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnExpiryDateChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property ItemId() As String
+		Get
+			Return Me._ItemId
+		End Get
+		Set
+			If (String.Equals(Me._ItemId, value) = false) Then
+				Me.OnItemIdChanging(value)
+				Me.SendPropertyChanging
+				Me._ItemId = value
+				Me.SendPropertyChanged("ItemId")
+				Me.OnItemIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemName", DbType:="VarChar(20)")>  _
+	Public Property ItemName() As String
+		Get
+			Return Me._ItemName
+		End Get
+		Set
+			If (String.Equals(Me._ItemName, value) = false) Then
+				Me.OnItemNameChanging(value)
+				Me.SendPropertyChanging
+				Me._ItemName = value
+				Me.SendPropertyChanged("ItemName")
+				Me.OnItemNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ItemDescription", DbType:="VarChar(100)")>  _
+	Public Property ItemDescription() As String
+		Get
+			Return Me._ItemDescription
+		End Get
+		Set
+			If (String.Equals(Me._ItemDescription, value) = false) Then
+				Me.OnItemDescriptionChanging(value)
+				Me.SendPropertyChanging
+				Me._ItemDescription = value
+				Me.SendPropertyChanged("ItemDescription")
+				Me.OnItemDescriptionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_UnitPrice", DbType:="Decimal(10,2)")>  _
+	Public Property UnitPrice() As System.Nullable(Of Decimal)
+		Get
+			Return Me._UnitPrice
+		End Get
+		Set
+			If (Me._UnitPrice.Equals(value) = false) Then
+				Me.OnUnitPriceChanging(value)
+				Me.SendPropertyChanging
+				Me._UnitPrice = value
+				Me.SendPropertyChanged("UnitPrice")
+				Me.OnUnitPriceChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Quantity", DbType:="Int")>  _
+	Public Property Quantity() As System.Nullable(Of Integer)
+		Get
+			Return Me._Quantity
+		End Get
+		Set
+			If (Me._Quantity.Equals(value) = false) Then
+				Me.OnQuantityChanging(value)
+				Me.SendPropertyChanging
+				Me._Quantity = value
+				Me.SendPropertyChanged("Quantity")
+				Me.OnQuantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ExpiryDate", DbType:="Date")>  _
+	Public Property ExpiryDate() As System.Nullable(Of Date)
+		Get
+			Return Me._ExpiryDate
+		End Get
+		Set
+			If (Me._ExpiryDate.Equals(value) = false) Then
+				Me.OnExpiryDateChanging(value)
+				Me.SendPropertyChanging
+				Me._ExpiryDate = value
+				Me.SendPropertyChanged("ExpiryDate")
+				Me.OnExpiryDateChanged
 			End If
 		End Set
 	End Property

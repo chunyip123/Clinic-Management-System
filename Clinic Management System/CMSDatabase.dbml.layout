@@ -14,12 +14,6 @@
         <elementListCompartment Id="de7d986c-011d-40b1-bac6-80ddf918ffae" absoluteBounds="6.015, 2.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="70b76eae-124e-402d-b10e-852d69c6beca" absoluteBounds="9, 1.875, 2, 1.9631982421875">
-      <DataClassMoniker Name="/CMSDatabaseDataContext/Inventory" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fe191d90-cbad-4db4-97e0-2f4556eb7b2a" absoluteBounds="9.015, 2.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e11e5f7a-d49b-4ebe-9ab1-a65f4f522c87" absoluteBounds="2.625, 4.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/CMSDatabaseDataContext/Medical" />
       <nestedChildShapes>
@@ -38,12 +32,6 @@
         <elementListCompartment Id="6cd2b668-b15d-48a5-a3d2-16906f65565c" absoluteBounds="10.015, 6.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a3aee81c-7181-49b3-84e0-6abf746d145d" absoluteBounds="3.25, 8.125, 2, 1.9631982421875">
-      <DataClassMoniker Name="/CMSDatabaseDataContext/PanelOrganisation" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ef0cc160-4202-4233-a1cc-75c8ec0fff79" absoluteBounds="3.265, 8.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="b42362b4-9f1f-4917-a53a-d37d198d93ab" absoluteBounds="9.875, 9.375, 2, 1.3862939453125">
       <DataClassMoniker Name="/CMSDatabaseDataContext/Payment" />
       <nestedChildShapes>
@@ -54,6 +42,18 @@
       <DataClassMoniker Name="/CMSDatabaseDataContext/Patient" />
       <nestedChildShapes>
         <elementListCompartment Id="098d7d3c-481f-4459-b6f5-179d2e10c818" absoluteBounds="7.14, 10.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="768220c4-192d-486a-bfa9-0cc5b1a6bbc7" absoluteBounds="3.5, 8.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CMSDatabaseDataContext/PanelOrganisation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b275df4-01f7-414e-81ef-f109e599e81b" absoluteBounds="3.5149999999999997, 8.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41097b0d-85f8-4485-87da-7f948f4cb038" absoluteBounds="9.375, 2.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CMSDatabaseDataContext/Inventory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65d3e2cc-b355-431f-9f4c-638607145f49" absoluteBounds="9.39, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

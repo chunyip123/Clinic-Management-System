@@ -32,16 +32,13 @@ Partial Class frmAddPatient
         Me.mskIdentityNo = New System.Windows.Forms.MaskedTextBox()
         Me.txtEmailAddress = New System.Windows.Forms.TextBox()
         Me.lblEmailAddress = New System.Windows.Forms.Label()
-        Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.lblContactNo = New System.Windows.Forms.Label()
         Me.lblGender = New System.Windows.Forms.Label()
-        Me.txtAge = New System.Windows.Forms.TextBox()
         Me.lblAge = New System.Windows.Forms.Label()
         Me.txtLastName = New System.Windows.Forms.TextBox()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnAddPatient = New System.Windows.Forms.Button()
         Me.lblPatientDetail = New System.Windows.Forms.Label()
-        Me.txtPostalCode = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
         Me.cboCity = New System.Windows.Forms.ComboBox()
@@ -49,8 +46,11 @@ Partial Class frmAddPatient
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.mskPostalCode = New System.Windows.Forms.MaskedTextBox()
         Me.cboState = New System.Windows.Forms.ComboBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.mskContactNo = New System.Windows.Forms.MaskedTextBox()
+        Me.mskAge = New System.Windows.Forms.MaskedTextBox()
         Me.lblEditPatient = New System.Windows.Forms.Label()
         Me.txtPatientId = New System.Windows.Forms.TextBox()
         Me.lblPatientId = New System.Windows.Forms.Label()
@@ -68,7 +68,7 @@ Partial Class frmAddPatient
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(304, 73)
-        Me.txtAddress.TabIndex = 14
+        Me.txtAddress.TabIndex = 1
         '
         'lblAddress
         '
@@ -77,7 +77,7 @@ Partial Class frmAddPatient
         Me.lblAddress.Location = New System.Drawing.Point(106, 29)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(71, 20)
-        Me.lblAddress.TabIndex = 13
+        Me.lblAddress.TabIndex = 0
         Me.lblAddress.Text = "Address"
         '
         'lblCity
@@ -87,7 +87,7 @@ Partial Class frmAddPatient
         Me.lblCity.Location = New System.Drawing.Point(106, 154)
         Me.lblCity.Name = "lblCity"
         Me.lblCity.Size = New System.Drawing.Size(38, 20)
-        Me.lblCity.TabIndex = 19
+        Me.lblCity.TabIndex = 2
         Me.lblCity.Text = "City"
         '
         'lblPostalCode
@@ -97,7 +97,7 @@ Partial Class frmAddPatient
         Me.lblPostalCode.Location = New System.Drawing.Point(106, 306)
         Me.lblPostalCode.Name = "lblPostalCode"
         Me.lblPostalCode.Size = New System.Drawing.Size(100, 20)
-        Me.lblPostalCode.TabIndex = 17
+        Me.lblPostalCode.TabIndex = 6
         Me.lblPostalCode.Text = "Postal Code"
         '
         'lblState
@@ -107,7 +107,7 @@ Partial Class frmAddPatient
         Me.lblState.Location = New System.Drawing.Point(106, 229)
         Me.lblState.Name = "lblState"
         Me.lblState.Size = New System.Drawing.Size(48, 20)
-        Me.lblState.TabIndex = 15
+        Me.lblState.TabIndex = 4
         Me.lblState.Text = "State"
         '
         'radFemale
@@ -117,7 +117,7 @@ Partial Class frmAddPatient
         Me.radFemale.Location = New System.Drawing.Point(191, 354)
         Me.radFemale.Name = "radFemale"
         Me.radFemale.Size = New System.Drawing.Size(85, 24)
-        Me.radFemale.TabIndex = 22
+        Me.radFemale.TabIndex = 10
         Me.radFemale.TabStop = True
         Me.radFemale.Text = "Female"
         Me.radFemale.UseVisualStyleBackColor = True
@@ -129,7 +129,7 @@ Partial Class frmAddPatient
         Me.radMale.Location = New System.Drawing.Point(107, 354)
         Me.radMale.Name = "radMale"
         Me.radMale.Size = New System.Drawing.Size(66, 24)
-        Me.radMale.TabIndex = 21
+        Me.radMale.TabIndex = 9
         Me.radMale.TabStop = True
         Me.radMale.Text = "Male"
         Me.radMale.UseVisualStyleBackColor = True
@@ -141,7 +141,7 @@ Partial Class frmAddPatient
         Me.mskIdentityNo.Mask = "000000-00-0000"
         Me.mskIdentityNo.Name = "mskIdentityNo"
         Me.mskIdentityNo.Size = New System.Drawing.Size(304, 27)
-        Me.mskIdentityNo.TabIndex = 4
+        Me.mskIdentityNo.TabIndex = 5
         Me.mskIdentityNo.ValidatingType = GetType(Integer)
         '
         'txtEmailAddress
@@ -150,7 +150,7 @@ Partial Class frmAddPatient
         Me.txtEmailAddress.Location = New System.Drawing.Point(107, 502)
         Me.txtEmailAddress.Name = "txtEmailAddress"
         Me.txtEmailAddress.Size = New System.Drawing.Size(304, 27)
-        Me.txtEmailAddress.TabIndex = 12
+        Me.txtEmailAddress.TabIndex = 14
         '
         'lblEmailAddress
         '
@@ -159,16 +159,8 @@ Partial Class frmAddPatient
         Me.lblEmailAddress.Location = New System.Drawing.Point(103, 479)
         Me.lblEmailAddress.Name = "lblEmailAddress"
         Me.lblEmailAddress.Size = New System.Drawing.Size(118, 20)
-        Me.lblEmailAddress.TabIndex = 11
+        Me.lblEmailAddress.TabIndex = 13
         Me.lblEmailAddress.Text = "Email Address"
-        '
-        'txtContactNo
-        '
-        Me.txtContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.Location = New System.Drawing.Point(107, 423)
-        Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(304, 27)
-        Me.txtContactNo.TabIndex = 10
         '
         'lblContactNo
         '
@@ -177,7 +169,7 @@ Partial Class frmAddPatient
         Me.lblContactNo.Location = New System.Drawing.Point(104, 400)
         Me.lblContactNo.Name = "lblContactNo"
         Me.lblContactNo.Size = New System.Drawing.Size(93, 20)
-        Me.lblContactNo.TabIndex = 9
+        Me.lblContactNo.TabIndex = 11
         Me.lblContactNo.Text = "Contact No"
         '
         'lblGender
@@ -187,16 +179,8 @@ Partial Class frmAddPatient
         Me.lblGender.Location = New System.Drawing.Point(103, 328)
         Me.lblGender.Name = "lblGender"
         Me.lblGender.Size = New System.Drawing.Size(64, 20)
-        Me.lblGender.TabIndex = 7
+        Me.lblGender.TabIndex = 8
         Me.lblGender.Text = "Gender"
-        '
-        'txtAge
-        '
-        Me.txtAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAge.Location = New System.Drawing.Point(107, 270)
-        Me.txtAge.Name = "txtAge"
-        Me.txtAge.Size = New System.Drawing.Size(304, 27)
-        Me.txtAge.TabIndex = 6
         '
         'lblAge
         '
@@ -205,7 +189,7 @@ Partial Class frmAddPatient
         Me.lblAge.Location = New System.Drawing.Point(103, 246)
         Me.lblAge.Name = "lblAge"
         Me.lblAge.Size = New System.Drawing.Size(38, 20)
-        Me.lblAge.TabIndex = 5
+        Me.lblAge.TabIndex = 6
         Me.lblAge.Text = "Age"
         '
         'txtLastName
@@ -219,13 +203,14 @@ Partial Class frmAddPatient
         'btnCancel
         '
         Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.Location = New System.Drawing.Point(942, 844)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(156, 58)
-        Me.btnCancel.TabIndex = 28
+        Me.btnCancel.TabIndex = 5
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
@@ -238,7 +223,7 @@ Partial Class frmAddPatient
         Me.btnAddPatient.Location = New System.Drawing.Point(736, 844)
         Me.btnAddPatient.Name = "btnAddPatient"
         Me.btnAddPatient.Size = New System.Drawing.Size(156, 58)
-        Me.btnAddPatient.TabIndex = 27
+        Me.btnAddPatient.TabIndex = 4
         Me.btnAddPatient.Text = "Add Patient"
         Me.btnAddPatient.UseVisualStyleBackColor = False
         '
@@ -251,14 +236,6 @@ Partial Class frmAddPatient
         Me.lblPatientDetail.Size = New System.Drawing.Size(178, 25)
         Me.lblPatientDetail.TabIndex = 26
         Me.lblPatientDetail.Text = "Basic Information"
-        '
-        'txtPostalCode
-        '
-        Me.txtPostalCode.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPostalCode.Location = New System.Drawing.Point(110, 329)
-        Me.txtPostalCode.Name = "txtPostalCode"
-        Me.txtPostalCode.Size = New System.Drawing.Size(304, 27)
-        Me.txtPostalCode.TabIndex = 18
         '
         'Label1
         '
@@ -277,7 +254,7 @@ Partial Class frmAddPatient
         Me.lblLastName.Location = New System.Drawing.Point(104, 101)
         Me.lblLastName.Name = "lblLastName"
         Me.lblLastName.Size = New System.Drawing.Size(91, 20)
-        Me.lblLastName.TabIndex = 0
+        Me.lblLastName.TabIndex = 2
         Me.lblLastName.Text = "Last Name"
         '
         'cboCity
@@ -288,7 +265,7 @@ Partial Class frmAddPatient
         Me.cboCity.Location = New System.Drawing.Point(110, 177)
         Me.cboCity.Name = "cboCity"
         Me.cboCity.Size = New System.Drawing.Size(304, 28)
-        Me.cboCity.TabIndex = 24
+        Me.cboCity.TabIndex = 3
         '
         'lblIdentityNo
         '
@@ -297,7 +274,7 @@ Partial Class frmAddPatient
         Me.lblIdentityNo.Location = New System.Drawing.Point(103, 173)
         Me.lblIdentityNo.Name = "lblIdentityNo"
         Me.lblIdentityNo.Size = New System.Drawing.Size(129, 20)
-        Me.lblIdentityNo.TabIndex = 0
+        Me.lblIdentityNo.TabIndex = 4
         Me.lblIdentityNo.Text = "Identity Card No"
         '
         'txtFirstName
@@ -306,7 +283,7 @@ Partial Class frmAddPatient
         Me.txtFirstName.Location = New System.Drawing.Point(107, 50)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(304, 27)
-        Me.txtFirstName.TabIndex = 2
+        Me.txtFirstName.TabIndex = 1
         '
         'lblFirstName
         '
@@ -321,18 +298,27 @@ Partial Class frmAddPatient
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.mskPostalCode)
         Me.Panel3.Controls.Add(Me.cboState)
         Me.Panel3.Controls.Add(Me.cboCity)
         Me.Panel3.Controls.Add(Me.txtAddress)
         Me.Panel3.Controls.Add(Me.lblAddress)
-        Me.Panel3.Controls.Add(Me.txtPostalCode)
         Me.Panel3.Controls.Add(Me.lblCity)
         Me.Panel3.Controls.Add(Me.lblPostalCode)
         Me.Panel3.Controls.Add(Me.lblState)
         Me.Panel3.Location = New System.Drawing.Point(585, 268)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(513, 564)
-        Me.Panel3.TabIndex = 30
+        Me.Panel3.TabIndex = 3
+        '
+        'mskPostalCode
+        '
+        Me.mskPostalCode.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mskPostalCode.Location = New System.Drawing.Point(110, 329)
+        Me.mskPostalCode.Mask = "00000"
+        Me.mskPostalCode.Name = "mskPostalCode"
+        Me.mskPostalCode.Size = New System.Drawing.Size(304, 27)
+        Me.mskPostalCode.TabIndex = 7
         '
         'cboState
         '
@@ -342,20 +328,20 @@ Partial Class frmAddPatient
         Me.cboState.Location = New System.Drawing.Point(110, 252)
         Me.cboState.Name = "cboState"
         Me.cboState.Size = New System.Drawing.Size(304, 28)
-        Me.cboState.TabIndex = 23
+        Me.cboState.TabIndex = 5
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.mskContactNo)
+        Me.Panel2.Controls.Add(Me.mskAge)
         Me.Panel2.Controls.Add(Me.radFemale)
         Me.Panel2.Controls.Add(Me.radMale)
         Me.Panel2.Controls.Add(Me.mskIdentityNo)
         Me.Panel2.Controls.Add(Me.txtEmailAddress)
         Me.Panel2.Controls.Add(Me.lblEmailAddress)
-        Me.Panel2.Controls.Add(Me.txtContactNo)
         Me.Panel2.Controls.Add(Me.lblContactNo)
         Me.Panel2.Controls.Add(Me.lblGender)
-        Me.Panel2.Controls.Add(Me.txtAge)
         Me.Panel2.Controls.Add(Me.lblAge)
         Me.Panel2.Controls.Add(Me.txtLastName)
         Me.Panel2.Controls.Add(Me.lblLastName)
@@ -365,7 +351,26 @@ Partial Class frmAddPatient
         Me.Panel2.Location = New System.Drawing.Point(32, 268)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(514, 564)
-        Me.Panel2.TabIndex = 25
+        Me.Panel2.TabIndex = 1
+        '
+        'mskContactNo
+        '
+        Me.mskContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mskContactNo.Location = New System.Drawing.Point(107, 423)
+        Me.mskContactNo.Mask = "000-00000000"
+        Me.mskContactNo.Name = "mskContactNo"
+        Me.mskContactNo.Size = New System.Drawing.Size(304, 27)
+        Me.mskContactNo.TabIndex = 12
+        '
+        'mskAge
+        '
+        Me.mskAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mskAge.Location = New System.Drawing.Point(107, 269)
+        Me.mskAge.Mask = "000"
+        Me.mskAge.Name = "mskAge"
+        Me.mskAge.Size = New System.Drawing.Size(304, 27)
+        Me.mskAge.TabIndex = 7
+        Me.mskAge.ValidatingType = GetType(Integer)
         '
         'lblEditPatient
         '
@@ -373,9 +378,9 @@ Partial Class frmAddPatient
         Me.lblEditPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEditPatient.Location = New System.Drawing.Point(30, 86)
         Me.lblEditPatient.Name = "lblEditPatient"
-        Me.lblEditPatient.Size = New System.Drawing.Size(327, 25)
+        Me.lblEditPatient.Size = New System.Drawing.Size(319, 25)
         Me.lblEditPatient.TabIndex = 24
-        Me.lblEditPatient.Text = "Patient Details Currently Viewing"
+        Me.lblEditPatient.Text = "Patient Details Currently Adding"
         '
         'txtPatientId
         '
@@ -404,7 +409,7 @@ Partial Class frmAddPatient
         Me.Panel1.Location = New System.Drawing.Point(32, 114)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(514, 99)
-        Me.Panel1.TabIndex = 23
+        Me.Panel1.TabIndex = 0
         '
         'lblAddPatient
         '
@@ -418,9 +423,12 @@ Partial Class frmAddPatient
         '
         'frmAddPatient
         '
+        Me.AcceptButton = Me.btnAddPatient
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(1131, 917)
+        Me.ControlBox = False
         Me.Controls.Add(Me.lblAddPatient)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAddPatient)
@@ -430,10 +438,8 @@ Partial Class frmAddPatient
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.lblEditPatient)
         Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAddPatient"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmAddPatient"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -455,16 +461,13 @@ Partial Class frmAddPatient
     Friend WithEvents mskIdentityNo As MaskedTextBox
     Friend WithEvents txtEmailAddress As TextBox
     Friend WithEvents lblEmailAddress As Label
-    Friend WithEvents txtContactNo As TextBox
     Friend WithEvents lblContactNo As Label
     Friend WithEvents lblGender As Label
-    Friend WithEvents txtAge As TextBox
     Friend WithEvents lblAge As Label
     Friend WithEvents txtLastName As TextBox
     Friend WithEvents btnCancel As Button
     Friend WithEvents btnAddPatient As Button
     Friend WithEvents lblPatientDetail As Label
-    Friend WithEvents txtPostalCode As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents lblLastName As Label
     Friend WithEvents cboCity As ComboBox
@@ -479,4 +482,7 @@ Partial Class frmAddPatient
     Friend WithEvents lblPatientId As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblAddPatient As Label
+    Friend WithEvents mskAge As MaskedTextBox
+    Friend WithEvents mskContactNo As MaskedTextBox
+    Friend WithEvents mskPostalCode As MaskedTextBox
 End Class

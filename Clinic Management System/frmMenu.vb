@@ -29,4 +29,14 @@ Public Class frmMenu
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles pnlTop.Paint
 
     End Sub
+
+    Private Sub btnPanel_Click(sender As Object, e As EventArgs) Handles btnPanel.Click
+        Me.Hide()
+        frmPanelList.Show()
+    End Sub
+
+    Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
+        Me.Hide()
+        frmInventoryList.Show()
+    End Sub
 End Class

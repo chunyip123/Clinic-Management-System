@@ -95,6 +95,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CMSDatabase.dbml</DependentUpon>
     </Compile>
+    <Compile Include="frmAddInventory.Designer.vb">
+      <DependentUpon>frmAddInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPanel.Designer.vb">
+      <DependentUpon>frmAddPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventoryList.Designer.vb">
+      <DependentUpon>frmInventoryList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInventoryList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -114,16 +132,34 @@
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPatientDetails.Designer.vb">
-      <DependentUpon>frmPatientDetails.vb</DependentUpon>
+    <Compile Include="frmPanelList.Designer.vb">
+      <DependentUpon>frmPanelList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPatientDetails.vb">
+    <Compile Include="frmPanelList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientDetails %28Discard%29.Designer.vb">
+      <DependentUpon>frmPatientDetails %28Discard%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientDetails %28Discard%29.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPatientList.Designer.vb">
       <DependentUpon>frmPatientList.vb</DependentUpon>
     </Compile>
     <Compile Include="frmPatientList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateInventory.Designer.vb">
+      <DependentUpon>frmUpdateInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePanel.Designer.vb">
+      <DependentUpon>frmUpdatePanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdatePanel.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUpdatePatient.Designer.vb">
@@ -149,6 +185,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAddInventory.resx">
+      <DependentUpon>frmAddInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPanel.resx">
+      <DependentUpon>frmAddPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventoryList.resx">
+      <DependentUpon>frmInventoryList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -158,11 +203,20 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPatientDetails.resx">
-      <DependentUpon>frmPatientDetails.vb</DependentUpon>
+    <EmbeddedResource Include="frmPanelList.resx">
+      <DependentUpon>frmPanelList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientDetails %28Discard%29.resx">
+      <DependentUpon>frmPatientDetails %28Discard%29.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPatientList.resx">
       <DependentUpon>frmPatientList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateInventory.resx">
+      <DependentUpon>frmUpdateInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdatePanel.resx">
+      <DependentUpon>frmUpdatePanel.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdatePatient.resx">
       <DependentUpon>frmUpdatePatient.vb</DependentUpon>

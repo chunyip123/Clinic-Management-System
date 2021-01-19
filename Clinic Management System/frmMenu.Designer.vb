@@ -41,21 +41,21 @@ Partial Class frmMenu
         'lblDashboard
         '
         Me.lblDashboard.AutoSize = True
-        Me.lblDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDashboard.Location = New System.Drawing.Point(67, 84)
+        Me.lblDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDashboard.Location = New System.Drawing.Point(64, 110)
         Me.lblDashboard.Name = "lblDashboard"
-        Me.lblDashboard.Size = New System.Drawing.Size(118, 26)
+        Me.lblDashboard.Size = New System.Drawing.Size(186, 38)
         Me.lblDashboard.TabIndex = 0
         Me.lblDashboard.Text = "Dashboard"
         '
         'btnPatients
         '
         Me.btnPatients.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnPatients.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPatients.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPatients.ForeColor = System.Drawing.Color.White
-        Me.btnPatients.Location = New System.Drawing.Point(72, 132)
+        Me.btnPatients.Location = New System.Drawing.Point(70, 162)
         Me.btnPatients.Name = "btnPatients"
-        Me.btnPatients.Size = New System.Drawing.Size(205, 213)
+        Me.btnPatients.Size = New System.Drawing.Size(527, 420)
         Me.btnPatients.TabIndex = 2
         Me.btnPatients.Text = "Patients List"
         Me.btnPatients.UseVisualStyleBackColor = False
@@ -63,11 +63,11 @@ Partial Class frmMenu
         'btnAppointments
         '
         Me.btnAppointments.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnAppointments.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAppointments.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAppointments.ForeColor = System.Drawing.Color.White
-        Me.btnAppointments.Location = New System.Drawing.Point(501, 132)
+        Me.btnAppointments.Location = New System.Drawing.Point(774, 162)
         Me.btnAppointments.Name = "btnAppointments"
-        Me.btnAppointments.Size = New System.Drawing.Size(205, 213)
+        Me.btnAppointments.Size = New System.Drawing.Size(527, 420)
         Me.btnAppointments.TabIndex = 3
         Me.btnAppointments.Text = "Appointments"
         Me.btnAppointments.UseVisualStyleBackColor = False
@@ -75,11 +75,11 @@ Partial Class frmMenu
         'btnPayment
         '
         Me.btnPayment.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPayment.ForeColor = System.Drawing.Color.White
-        Me.btnPayment.Location = New System.Drawing.Point(915, 132)
+        Me.btnPayment.Location = New System.Drawing.Point(1452, 162)
         Me.btnPayment.Name = "btnPayment"
-        Me.btnPayment.Size = New System.Drawing.Size(205, 213)
+        Me.btnPayment.Size = New System.Drawing.Size(527, 420)
         Me.btnPayment.TabIndex = 4
         Me.btnPayment.Text = "Medicine Collection / Payment"
         Me.btnPayment.UseVisualStyleBackColor = False
@@ -87,11 +87,11 @@ Partial Class frmMenu
         'btnInventory
         '
         Me.btnInventory.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventory.ForeColor = System.Drawing.Color.White
-        Me.btnInventory.Location = New System.Drawing.Point(72, 439)
+        Me.btnInventory.Location = New System.Drawing.Point(71, 618)
         Me.btnInventory.Name = "btnInventory"
-        Me.btnInventory.Size = New System.Drawing.Size(205, 213)
+        Me.btnInventory.Size = New System.Drawing.Size(527, 420)
         Me.btnInventory.TabIndex = 5
         Me.btnInventory.Text = "Medical Inventory"
         Me.btnInventory.UseVisualStyleBackColor = False
@@ -99,11 +99,11 @@ Partial Class frmMenu
         'btnPanel
         '
         Me.btnPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPanel.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPanel.ForeColor = System.Drawing.Color.White
-        Me.btnPanel.Location = New System.Drawing.Point(501, 439)
+        Me.btnPanel.Location = New System.Drawing.Point(774, 618)
         Me.btnPanel.Name = "btnPanel"
-        Me.btnPanel.Size = New System.Drawing.Size(205, 213)
+        Me.btnPanel.Size = New System.Drawing.Size(527, 420)
         Me.btnPanel.TabIndex = 6
         Me.btnPanel.Text = "Panel Organizations"
         Me.btnPanel.UseVisualStyleBackColor = False
@@ -115,10 +115,10 @@ Partial Class frmMenu
         'lblClinic
         '
         Me.lblClinic.AutoSize = True
-        Me.lblClinic.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblClinic.Location = New System.Drawing.Point(19, 16)
+        Me.lblClinic.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClinic.Location = New System.Drawing.Point(37, 23)
         Me.lblClinic.Name = "lblClinic"
-        Me.lblClinic.Size = New System.Drawing.Size(324, 29)
+        Me.lblClinic.Size = New System.Drawing.Size(373, 36)
         Me.lblClinic.TabIndex = 2
         Me.lblClinic.Text = "Clinic Management System"
         '
@@ -126,10 +126,11 @@ Partial Class frmMenu
         '
         Me.btnLogout.BackColor = System.Drawing.SystemColors.Control
         Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogout.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnLogout.Location = New System.Drawing.Point(1070, 9)
+        Me.btnLogout.Location = New System.Drawing.Point(1884, 9)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(109, 44)
+        Me.btnLogout.Size = New System.Drawing.Size(155, 66)
         Me.btnLogout.TabIndex = 3
         Me.btnLogout.Text = "Sign Out"
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -137,20 +138,20 @@ Partial Class frmMenu
         'lblUsername
         '
         Me.lblUsername.AutoSize = True
-        Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.Location = New System.Drawing.Point(900, 23)
+        Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsername.Location = New System.Drawing.Point(1620, 32)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(0, 20)
+        Me.lblUsername.Size = New System.Drawing.Size(0, 25)
         Me.lblUsername.TabIndex = 4
         Me.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblTime
         '
         Me.lblTime.AutoSize = True
-        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(572, 23)
+        Me.lblTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTime.Location = New System.Drawing.Point(871, 32)
         Me.lblTime.Name = "lblTime"
-        Me.lblTime.Size = New System.Drawing.Size(0, 20)
+        Me.lblTime.Size = New System.Drawing.Size(0, 25)
         Me.lblTime.TabIndex = 5
         '
         'pnlTop
@@ -162,14 +163,14 @@ Partial Class frmMenu
         Me.pnlTop.Controls.Add(Me.lblClinic)
         Me.pnlTop.Location = New System.Drawing.Point(-1, -2)
         Me.pnlTop.Name = "pnlTop"
-        Me.pnlTop.Size = New System.Drawing.Size(1189, 60)
+        Me.pnlTop.Size = New System.Drawing.Size(2050, 83)
         Me.pnlTop.TabIndex = 1
         '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1185, 696)
+        Me.ClientSize = New System.Drawing.Size(2050, 1060)
         Me.Controls.Add(Me.btnPanel)
         Me.Controls.Add(Me.btnInventory)
         Me.Controls.Add(Me.btnPayment)
