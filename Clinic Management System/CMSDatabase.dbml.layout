@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 13.5" name="CMSDatabase">
   <DataContextMoniker Name="/CMSDatabaseDataContext" />
   <nestedChildShapes>
-    <classShape Id="813d5e13-87e9-4df9-b41f-20774fb38a59" absoluteBounds="2.75, 1.25, 2, 2.3478011067708335">
-      <DataClassMoniker Name="/CMSDatabaseDataContext/Appointment" />
-      <nestedChildShapes>
-        <elementListCompartment Id="ce346374-d98e-45c1-b9c8-77f02442e613" absoluteBounds="2.765, 1.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="b7969d47-194d-4c7a-80b9-ff768a1a8423" absoluteBounds="6, 1.75, 2, 3.5016097005208326">
       <DataClassMoniker Name="/CMSDatabaseDataContext/Employee" />
       <nestedChildShapes>
@@ -54,6 +48,12 @@
       <DataClassMoniker Name="/CMSDatabaseDataContext/Inventory" />
       <nestedChildShapes>
         <elementListCompartment Id="65d3e2cc-b355-431f-9f4c-638607145f49" absoluteBounds="9.39, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5068d748-3f56-44b2-9701-bf3df5e12f03" absoluteBounds="2.875, 1.25, 2, 2.5401025390625">
+      <DataClassMoniker Name="/CMSDatabaseDataContext/Appointment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90037a2c-981f-4690-bb9b-e7c92b5813e5" absoluteBounds="2.89, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

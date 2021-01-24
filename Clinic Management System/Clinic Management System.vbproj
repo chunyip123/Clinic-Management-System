@@ -107,6 +107,18 @@
     <Compile Include="frmAddPanel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAppointmentList.Designer.vb">
+      <DependentUpon>frmAppointmentList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAppointmentList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditAppointment.Designer.vb">
+      <DependentUpon>frmEditAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmInventoryList.Designer.vb">
       <DependentUpon>frmInventoryList.vb</DependentUpon>
     </Compile>
@@ -190,6 +202,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddPanel.resx">
       <DependentUpon>frmAddPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAppointmentList.resx">
+      <DependentUpon>frmAppointmentList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditAppointment.resx">
+      <DependentUpon>frmEditAppointment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInventoryList.resx">
       <DependentUpon>frmInventoryList.vb</DependentUpon>

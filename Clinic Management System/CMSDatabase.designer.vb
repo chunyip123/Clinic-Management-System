@@ -31,12 +31,6 @@ Partial Public Class CMSDatabaseDataContext
   #Region "Extensibility Method Definitions"
   Partial Private Sub OnCreated()
   End Sub
-  Partial Private Sub InsertAppointment(instance As Appointment)
-    End Sub
-  Partial Private Sub UpdateAppointment(instance As Appointment)
-    End Sub
-  Partial Private Sub DeleteAppointment(instance As Appointment)
-    End Sub
   Partial Private Sub InsertEmployee(instance As Employee)
     End Sub
   Partial Private Sub UpdateEmployee(instance As Employee)
@@ -85,6 +79,12 @@ Partial Public Class CMSDatabaseDataContext
     End Sub
   Partial Private Sub DeleteInventory(instance As Inventory)
     End Sub
+  Partial Private Sub InsertAppointment(instance As Appointment)
+    End Sub
+  Partial Private Sub UpdateAppointment(instance As Appointment)
+    End Sub
+  Partial Private Sub DeleteAppointment(instance As Appointment)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -111,12 +111,6 @@ Partial Public Class CMSDatabaseDataContext
 		MyBase.New(connection, mappingSource)
 		OnCreated
 	End Sub
-	
-	Public ReadOnly Property Appointments() As System.Data.Linq.Table(Of Appointment)
-		Get
-			Return Me.GetTable(Of Appointment)
-		End Get
-	End Property
 	
 	Public ReadOnly Property Employees() As System.Data.Linq.Table(Of Employee)
 		Get
@@ -165,221 +159,12 @@ Partial Public Class CMSDatabaseDataContext
 			Return Me.GetTable(Of Inventory)
 		End Get
 	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Appointment")>  _
-Partial Public Class Appointment
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _AppointId As String
-	
-	Private _PatientId As String
-	
-	Private _FirstName As String
-	
-	Private _LastName As String
-	
-	Private _ContactNo As String
-	
-	Private _EmailAdd As String
-	
-	Private _Date As System.Nullable(Of Date)
-	
-	Private _Time As System.Nullable(Of System.TimeSpan)
-	
-    #Region "Extensibility Method Definitions"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnAppointIdChanging(value As String)
-    End Sub
-    Partial Private Sub OnAppointIdChanged()
-    End Sub
-    Partial Private Sub OnPatientIdChanging(value As String)
-    End Sub
-    Partial Private Sub OnPatientIdChanged()
-    End Sub
-    Partial Private Sub OnFirstNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnFirstNameChanged()
-    End Sub
-    Partial Private Sub OnLastNameChanging(value As String)
-    End Sub
-    Partial Private Sub OnLastNameChanged()
-    End Sub
-    Partial Private Sub OnContactNoChanging(value As String)
-    End Sub
-    Partial Private Sub OnContactNoChanged()
-    End Sub
-    Partial Private Sub OnEmailAddChanging(value As String)
-    End Sub
-    Partial Private Sub OnEmailAddChanged()
-    End Sub
-    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDateChanged()
-    End Sub
-    Partial Private Sub OnTimeChanging(value As System.Nullable(Of System.TimeSpan))
-    End Sub
-    Partial Private Sub OnTimeChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AppointId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
-	Public Property AppointId() As String
+	Public ReadOnly Property Appointments() As System.Data.Linq.Table(Of Appointment)
 		Get
-			Return Me._AppointId
+			Return Me.GetTable(Of Appointment)
 		End Get
-		Set
-			If (String.Equals(Me._AppointId, value) = false) Then
-				Me.OnAppointIdChanging(value)
-				Me.SendPropertyChanging
-				Me._AppointId = value
-				Me.SendPropertyChanged("AppointId")
-				Me.OnAppointIdChanged
-			End If
-		End Set
 	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PatientId", DbType:="VarChar(10)")>  _
-	Public Property PatientId() As String
-		Get
-			Return Me._PatientId
-		End Get
-		Set
-			If (String.Equals(Me._PatientId, value) = false) Then
-				Me.OnPatientIdChanging(value)
-				Me.SendPropertyChanging
-				Me._PatientId = value
-				Me.SendPropertyChanged("PatientId")
-				Me.OnPatientIdChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FirstName", DbType:="VarChar(20)")>  _
-	Public Property FirstName() As String
-		Get
-			Return Me._FirstName
-		End Get
-		Set
-			If (String.Equals(Me._FirstName, value) = false) Then
-				Me.OnFirstNameChanging(value)
-				Me.SendPropertyChanging
-				Me._FirstName = value
-				Me.SendPropertyChanged("FirstName")
-				Me.OnFirstNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LastName", DbType:="VarChar(20)")>  _
-	Public Property LastName() As String
-		Get
-			Return Me._LastName
-		End Get
-		Set
-			If (String.Equals(Me._LastName, value) = false) Then
-				Me.OnLastNameChanging(value)
-				Me.SendPropertyChanging
-				Me._LastName = value
-				Me.SendPropertyChanged("LastName")
-				Me.OnLastNameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ContactNo", DbType:="VarChar(12)")>  _
-	Public Property ContactNo() As String
-		Get
-			Return Me._ContactNo
-		End Get
-		Set
-			If (String.Equals(Me._ContactNo, value) = false) Then
-				Me.OnContactNoChanging(value)
-				Me.SendPropertyChanging
-				Me._ContactNo = value
-				Me.SendPropertyChanged("ContactNo")
-				Me.OnContactNoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmailAdd", DbType:="VarChar(50)")>  _
-	Public Property EmailAdd() As String
-		Get
-			Return Me._EmailAdd
-		End Get
-		Set
-			If (String.Equals(Me._EmailAdd, value) = false) Then
-				Me.OnEmailAddChanging(value)
-				Me.SendPropertyChanging
-				Me._EmailAdd = value
-				Me.SendPropertyChanged("EmailAdd")
-				Me.OnEmailAddChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
-	Public Property [Date]() As System.Nullable(Of Date)
-		Get
-			Return Me._Date
-		End Get
-		Set
-			If (Me._Date.Equals(value) = false) Then
-				Me.OnDateChanging(value)
-				Me.SendPropertyChanging
-				Me._Date = value
-				Me.SendPropertyChanged("[Date]")
-				Me.OnDateChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Time", DbType:="Time")>  _
-	Public Property Time() As System.Nullable(Of System.TimeSpan)
-		Get
-			Return Me._Time
-		End Get
-		Set
-			If (Me._Time.Equals(value) = false) Then
-				Me.OnTimeChanging(value)
-				Me.SendPropertyChanging
-				Me._Time = value
-				Me.SendPropertyChanged("Time")
-				Me.OnTimeChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Employee")>  _
@@ -2057,6 +1842,243 @@ Partial Public Class Inventory
 				Me._ExpiryDate = value
 				Me.SendPropertyChanged("ExpiryDate")
 				Me.OnExpiryDateChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Appointment")>  _
+Partial Public Class Appointment
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _AppointId As String
+	
+	Private _PatientId As String
+	
+	Private _FirstName As String
+	
+	Private _LastName As String
+	
+	Private _IcNo As String
+	
+	Private _ContactNo As String
+	
+	Private _EmailAdd As String
+	
+	Private _Date As System.Nullable(Of Date)
+	
+	Private _Time As System.Nullable(Of System.TimeSpan)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnAppointIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnAppointIdChanged()
+    End Sub
+    Partial Private Sub OnPatientIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnPatientIdChanged()
+    End Sub
+    Partial Private Sub OnFirstNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnFirstNameChanged()
+    End Sub
+    Partial Private Sub OnLastNameChanging(value As String)
+    End Sub
+    Partial Private Sub OnLastNameChanged()
+    End Sub
+    Partial Private Sub OnIcNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnIcNoChanged()
+    End Sub
+    Partial Private Sub OnContactNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnContactNoChanged()
+    End Sub
+    Partial Private Sub OnEmailAddChanging(value As String)
+    End Sub
+    Partial Private Sub OnEmailAddChanged()
+    End Sub
+    Partial Private Sub OnDateChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDateChanged()
+    End Sub
+    Partial Private Sub OnTimeChanging(value As System.Nullable(Of System.TimeSpan))
+    End Sub
+    Partial Private Sub OnTimeChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AppointId", DbType:="VarChar(10) NOT NULL", CanBeNull:=false, IsPrimaryKey:=true)>  _
+	Public Property AppointId() As String
+		Get
+			Return Me._AppointId
+		End Get
+		Set
+			If (String.Equals(Me._AppointId, value) = false) Then
+				Me.OnAppointIdChanging(value)
+				Me.SendPropertyChanging
+				Me._AppointId = value
+				Me.SendPropertyChanged("AppointId")
+				Me.OnAppointIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PatientId", DbType:="VarChar(10)")>  _
+	Public Property PatientId() As String
+		Get
+			Return Me._PatientId
+		End Get
+		Set
+			If (String.Equals(Me._PatientId, value) = false) Then
+				Me.OnPatientIdChanging(value)
+				Me.SendPropertyChanging
+				Me._PatientId = value
+				Me.SendPropertyChanged("PatientId")
+				Me.OnPatientIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FirstName", DbType:="VarChar(20)")>  _
+	Public Property FirstName() As String
+		Get
+			Return Me._FirstName
+		End Get
+		Set
+			If (String.Equals(Me._FirstName, value) = false) Then
+				Me.OnFirstNameChanging(value)
+				Me.SendPropertyChanging
+				Me._FirstName = value
+				Me.SendPropertyChanged("FirstName")
+				Me.OnFirstNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LastName", DbType:="VarChar(20)")>  _
+	Public Property LastName() As String
+		Get
+			Return Me._LastName
+		End Get
+		Set
+			If (String.Equals(Me._LastName, value) = false) Then
+				Me.OnLastNameChanging(value)
+				Me.SendPropertyChanging
+				Me._LastName = value
+				Me.SendPropertyChanged("LastName")
+				Me.OnLastNameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IcNo", DbType:="VarChar(14)")>  _
+	Public Property IcNo() As String
+		Get
+			Return Me._IcNo
+		End Get
+		Set
+			If (String.Equals(Me._IcNo, value) = false) Then
+				Me.OnIcNoChanging(value)
+				Me.SendPropertyChanging
+				Me._IcNo = value
+				Me.SendPropertyChanged("IcNo")
+				Me.OnIcNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ContactNo", DbType:="VarChar(12)")>  _
+	Public Property ContactNo() As String
+		Get
+			Return Me._ContactNo
+		End Get
+		Set
+			If (String.Equals(Me._ContactNo, value) = false) Then
+				Me.OnContactNoChanging(value)
+				Me.SendPropertyChanging
+				Me._ContactNo = value
+				Me.SendPropertyChanged("ContactNo")
+				Me.OnContactNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EmailAdd", DbType:="VarChar(50)")>  _
+	Public Property EmailAdd() As String
+		Get
+			Return Me._EmailAdd
+		End Get
+		Set
+			If (String.Equals(Me._EmailAdd, value) = false) Then
+				Me.OnEmailAddChanging(value)
+				Me.SendPropertyChanging
+				Me._EmailAdd = value
+				Me.SendPropertyChanged("EmailAdd")
+				Me.OnEmailAddChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="Date", Storage:="_Date", DbType:="Date")>  _
+	Public Property [Date]() As System.Nullable(Of Date)
+		Get
+			Return Me._Date
+		End Get
+		Set
+			If (Me._Date.Equals(value) = false) Then
+				Me.OnDateChanging(value)
+				Me.SendPropertyChanging
+				Me._Date = value
+				Me.SendPropertyChanged("[Date]")
+				Me.OnDateChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Time", DbType:="Time")>  _
+	Public Property Time() As System.Nullable(Of System.TimeSpan)
+		Get
+			Return Me._Time
+		End Get
+		Set
+			If (Me._Time.Equals(value) = false) Then
+				Me.OnTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._Time = value
+				Me.SendPropertyChanged("Time")
+				Me.OnTimeChanged
 			End If
 		End Set
 	End Property

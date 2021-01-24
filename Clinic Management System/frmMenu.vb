@@ -39,4 +39,9 @@ Public Class frmMenu
         Me.Hide()
         frmInventoryList.Show()
     End Sub
+
+    Private Sub btnAppointments_Click(sender As Object, e As EventArgs) Handles btnAppointments.Click
+        Me.Hide()
+        frmAppointmentList.Show()
+    End Sub
 End Class
