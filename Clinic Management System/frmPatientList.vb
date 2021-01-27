@@ -21,14 +21,14 @@ Public Class frmPatientList
         dgv.Columns(7).HeaderCell.Value = "Email Address"
         dgv.Columns(11).HeaderCell.Value = "Postal Code"
 
+        Timer2.Enabled = True
+
         ''dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black
         ''dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.White
     End Sub
 
     Private Sub BindData()
         Dim db As New CMSDatabaseDataContext()
-        ''dgv.DataSource = db.Patients
-
         Dim rs = From p In db.Patients
 
         dgv.DataSource = rs
@@ -56,7 +56,7 @@ Public Class frmPatientList
             Dim id As String = CStr(dgv.Rows(i).Cells(0).Value)
             frmUpdatePatient.SelectedId = id
             frmUpdatePatient.ShowDialog(Me)
-            BindData()
+            ''BindData()
         End If
     End Sub
 
@@ -66,14 +66,15 @@ Public Class frmPatientList
         Dim rs = From p In db.Patients
 
         dgv.DataSource = rs
-        ''lblResultsNo.Text = rs.Count()
-
-        ''frmAddPatient.NextPatientId = rs.Count() + 1
         frmAddPatient.ShowDialog(Me)
-        BindData()
+        ''BindData()
     End Sub
 
     Private Sub txtSearchPatient_TextChanged(sender As Object, e As EventArgs) Handles txtSearchPatient.TextChanged
+        MakeSearch()
+    End Sub
+
+    Private Sub MakeSearch()
         If cboSearchPatient.SelectedIndex = 0 Then
             BindDataById()
         ElseIf cboSearchPatient.SelectedIndex = 1 Then
@@ -182,6 +183,10 @@ Public Class frmPatientList
     End Sub
 
     Private Sub cboSortSequence_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSortSequence.SelectedIndexChanged
+        MakeSort()
+    End Sub
+
+    Private Sub MakeSort()
         If cboSortSequence.SelectedIndex = 0 Then
             If cboSortPatient.SelectedIndex = 0 Then
                 dgv.Sort(dgv.Columns(1), ListSortDirection.Ascending)
@@ -224,6 +229,35 @@ Public Class frmPatientList
         If i > -1 Then
             Dim id As String = CStr(dgv.Rows(i).Cells(0).Value)
             ClickedId = id
+        End If
+    End Sub
+
+    'Private Sub Button1_Click(sender As Object, e As EventArgs)
+    '    BindData()
+
+    '    Dim db As New CMSDatabaseDataContext()
+    '    Dim c As UpdateCheck = db.UpdateChecks.FirstOrDefault(Function(o) o.TableName = "Patient")
+
+    '    c.GotUpdate = "No"
+    '    db.SubmitChanges()
+    'End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Dim db As New CMSDatabaseDataContext()
+        Dim c As UpdateCheck = db.UpdateChecks.FirstOrDefault(Function(o) o.TableName = "Patient")
+
+        If c.GotUpdate = "Yes" Then
+
+            If cboSortSequence.SelectedIndex <> -1 Then
+                BindData()
+                MakeSort()
+            ElseIf cboSearchPatient.SelectedIndex <> -1 Then
+                MakeSearch()
+            Else
+                BindData()
+            End If
+            c.GotUpdate = "No"
+            db.SubmitChanges()
         End If
     End Sub
 End Class

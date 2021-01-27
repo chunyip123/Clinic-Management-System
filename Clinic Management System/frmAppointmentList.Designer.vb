@@ -23,7 +23,6 @@ Partial Class frmAppointmentList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.btnCreateAppointment = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.btnLogout = New System.Windows.Forms.Button()
@@ -67,19 +66,6 @@ Partial Class frmAppointmentList
         Me.pnlTop.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnCreateAppointment
-        '
-        Me.btnCreateAppointment.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnCreateAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCreateAppointment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCreateAppointment.ForeColor = System.Drawing.Color.White
-        Me.btnCreateAppointment.Location = New System.Drawing.Point(1698, 987)
-        Me.btnCreateAppointment.Name = "btnCreateAppointment"
-        Me.btnCreateAppointment.Size = New System.Drawing.Size(156, 62)
-        Me.btnCreateAppointment.TabIndex = 46
-        Me.btnCreateAppointment.Text = "Create Appointment"
-        Me.btnCreateAppointment.UseVisualStyleBackColor = False
         '
         'btnBack
         '
@@ -242,24 +228,24 @@ Partial Class frmAppointmentList
         '
         Me.btn1045AM.BackColor = System.Drawing.Color.LightGray
         Me.btn1045AM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1045AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1045AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1045AM.Location = New System.Drawing.Point(1482, 686)
         Me.btn1045AM.Name = "btn1045AM"
         Me.btn1045AM.Size = New System.Drawing.Size(322, 114)
         Me.btn1045AM.TabIndex = 58
-        Me.btn1045AM.Text = "10:45 AM"
+        Me.btn1045AM.Text = "10:45"
         Me.btn1045AM.UseVisualStyleBackColor = False
         '
         'btn1030AM
         '
         Me.btn1030AM.BackColor = System.Drawing.Color.LightGray
         Me.btn1030AM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1030AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1030AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1030AM.Location = New System.Drawing.Point(998, 686)
         Me.btn1030AM.Name = "btn1030AM"
         Me.btn1030AM.Size = New System.Drawing.Size(322, 114)
         Me.btn1030AM.TabIndex = 57
-        Me.btn1030AM.Text = "10:30 AM"
+        Me.btn1030AM.Text = "10:30"
         Me.btn1030AM.UseVisualStyleBackColor = False
         '
         'btn1015AM
@@ -330,240 +316,240 @@ Partial Class frmAppointmentList
         '
         Me.btn445PM.BackColor = System.Drawing.Color.LightGray
         Me.btn445PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn445PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn445PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn445PM.Location = New System.Drawing.Point(1482, 1658)
         Me.btn445PM.Name = "btn445PM"
         Me.btn445PM.Size = New System.Drawing.Size(322, 114)
         Me.btn445PM.TabIndex = 78
-        Me.btn445PM.Text = "4:45 PM"
+        Me.btn445PM.Text = "16:45"
         Me.btn445PM.UseVisualStyleBackColor = False
         '
         'btn430PM
         '
         Me.btn430PM.BackColor = System.Drawing.Color.LightGray
         Me.btn430PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn430PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn430PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn430PM.Location = New System.Drawing.Point(998, 1658)
         Me.btn430PM.Name = "btn430PM"
         Me.btn430PM.Size = New System.Drawing.Size(322, 114)
         Me.btn430PM.TabIndex = 77
-        Me.btn430PM.Text = "4:30 PM"
+        Me.btn430PM.Text = "16:30"
         Me.btn430PM.UseVisualStyleBackColor = False
         '
         'btn415PM
         '
         Me.btn415PM.BackColor = System.Drawing.Color.LightGray
         Me.btn415PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn415PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn415PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn415PM.Location = New System.Drawing.Point(532, 1658)
         Me.btn415PM.Name = "btn415PM"
         Me.btn415PM.Size = New System.Drawing.Size(322, 114)
         Me.btn415PM.TabIndex = 76
-        Me.btn415PM.Text = "4:15 PM"
+        Me.btn415PM.Text = "16:15"
         Me.btn415PM.UseVisualStyleBackColor = False
         '
         'btn400PM
         '
         Me.btn400PM.BackColor = System.Drawing.Color.LightGray
         Me.btn400PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn400PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn400PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn400PM.Location = New System.Drawing.Point(58, 1658)
         Me.btn400PM.Name = "btn400PM"
         Me.btn400PM.Size = New System.Drawing.Size(322, 114)
         Me.btn400PM.TabIndex = 75
-        Me.btn400PM.Text = "4:00 PM"
+        Me.btn400PM.Text = "16:00"
         Me.btn400PM.UseVisualStyleBackColor = False
         '
         'btn245PM
         '
         Me.btn245PM.BackColor = System.Drawing.Color.LightGray
         Me.btn245PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn245PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn245PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn245PM.Location = New System.Drawing.Point(1482, 1267)
         Me.btn245PM.Name = "btn245PM"
         Me.btn245PM.Size = New System.Drawing.Size(322, 114)
         Me.btn245PM.TabIndex = 74
-        Me.btn245PM.Text = "2:45 PM"
+        Me.btn245PM.Text = "14:45"
         Me.btn245PM.UseVisualStyleBackColor = False
         '
         'btn230PM
         '
         Me.btn230PM.BackColor = System.Drawing.Color.LightGray
         Me.btn230PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn230PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn230PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn230PM.Location = New System.Drawing.Point(998, 1267)
         Me.btn230PM.Name = "btn230PM"
         Me.btn230PM.Size = New System.Drawing.Size(322, 114)
         Me.btn230PM.TabIndex = 73
-        Me.btn230PM.Text = "2:30 PM"
+        Me.btn230PM.Text = "14:30"
         Me.btn230PM.UseVisualStyleBackColor = False
         '
         'btn215PM
         '
         Me.btn215PM.BackColor = System.Drawing.Color.LightGray
         Me.btn215PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn215PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn215PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn215PM.Location = New System.Drawing.Point(532, 1267)
         Me.btn215PM.Name = "btn215PM"
         Me.btn215PM.Size = New System.Drawing.Size(322, 114)
         Me.btn215PM.TabIndex = 72
-        Me.btn215PM.Text = "2:15 PM"
+        Me.btn215PM.Text = "14:15"
         Me.btn215PM.UseVisualStyleBackColor = False
         '
         'btn200PM
         '
         Me.btn200PM.BackColor = System.Drawing.Color.LightGray
         Me.btn200PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn200PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn200PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn200PM.Location = New System.Drawing.Point(58, 1267)
         Me.btn200PM.Name = "btn200PM"
         Me.btn200PM.Size = New System.Drawing.Size(322, 114)
         Me.btn200PM.TabIndex = 71
-        Me.btn200PM.Text = "2:00 PM"
+        Me.btn200PM.Text = "14:00"
         Me.btn200PM.UseVisualStyleBackColor = False
         '
         'btn345PM
         '
         Me.btn345PM.BackColor = System.Drawing.Color.LightGray
         Me.btn345PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn345PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn345PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn345PM.Location = New System.Drawing.Point(1482, 1462)
         Me.btn345PM.Name = "btn345PM"
         Me.btn345PM.Size = New System.Drawing.Size(322, 114)
         Me.btn345PM.TabIndex = 70
-        Me.btn345PM.Text = "3:45 PM"
+        Me.btn345PM.Text = "15:45"
         Me.btn345PM.UseVisualStyleBackColor = False
         '
         'btn330PM
         '
         Me.btn330PM.BackColor = System.Drawing.Color.LightGray
         Me.btn330PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn330PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn330PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn330PM.Location = New System.Drawing.Point(998, 1462)
         Me.btn330PM.Name = "btn330PM"
         Me.btn330PM.Size = New System.Drawing.Size(322, 114)
         Me.btn330PM.TabIndex = 69
-        Me.btn330PM.Text = "3:30 PM"
+        Me.btn330PM.Text = "15:30"
         Me.btn330PM.UseVisualStyleBackColor = False
         '
         'btn315PM
         '
         Me.btn315PM.BackColor = System.Drawing.Color.LightGray
         Me.btn315PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn315PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn315PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn315PM.Location = New System.Drawing.Point(532, 1462)
         Me.btn315PM.Name = "btn315PM"
         Me.btn315PM.Size = New System.Drawing.Size(322, 114)
         Me.btn315PM.TabIndex = 68
-        Me.btn315PM.Text = "3:15 PM"
+        Me.btn315PM.Text = "15:15"
         Me.btn315PM.UseVisualStyleBackColor = False
         '
         'btn300PM
         '
         Me.btn300PM.BackColor = System.Drawing.Color.LightGray
         Me.btn300PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn300PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn300PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn300PM.Location = New System.Drawing.Point(58, 1462)
         Me.btn300PM.Name = "btn300PM"
         Me.btn300PM.Size = New System.Drawing.Size(322, 114)
         Me.btn300PM.TabIndex = 67
-        Me.btn300PM.Text = "3:00 PM"
+        Me.btn300PM.Text = "15:00"
         Me.btn300PM.UseVisualStyleBackColor = False
         '
         'btn1245PM
         '
         Me.btn1245PM.BackColor = System.Drawing.Color.LightGray
         Me.btn1245PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1245PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1245PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1245PM.Location = New System.Drawing.Point(1482, 1077)
         Me.btn1245PM.Name = "btn1245PM"
         Me.btn1245PM.Size = New System.Drawing.Size(322, 114)
         Me.btn1245PM.TabIndex = 66
-        Me.btn1245PM.Text = "12:45 PM"
+        Me.btn1245PM.Text = "12:45"
         Me.btn1245PM.UseVisualStyleBackColor = False
         '
         'btn1230PM
         '
         Me.btn1230PM.BackColor = System.Drawing.Color.LightGray
         Me.btn1230PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1230PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1230PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1230PM.Location = New System.Drawing.Point(998, 1077)
         Me.btn1230PM.Name = "btn1230PM"
         Me.btn1230PM.Size = New System.Drawing.Size(322, 114)
         Me.btn1230PM.TabIndex = 65
-        Me.btn1230PM.Text = "12:30 PM"
+        Me.btn1230PM.Text = "12:30"
         Me.btn1230PM.UseVisualStyleBackColor = False
         '
         'btn1215PM
         '
         Me.btn1215PM.BackColor = System.Drawing.Color.LightGray
         Me.btn1215PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1215PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1215PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1215PM.Location = New System.Drawing.Point(532, 1077)
         Me.btn1215PM.Name = "btn1215PM"
         Me.btn1215PM.Size = New System.Drawing.Size(322, 114)
         Me.btn1215PM.TabIndex = 64
-        Me.btn1215PM.Text = "12:15 PM"
+        Me.btn1215PM.Text = "12:15"
         Me.btn1215PM.UseVisualStyleBackColor = False
         '
         'btn1200PM
         '
         Me.btn1200PM.BackColor = System.Drawing.Color.LightGray
         Me.btn1200PM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1200PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1200PM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1200PM.Location = New System.Drawing.Point(58, 1077)
         Me.btn1200PM.Name = "btn1200PM"
         Me.btn1200PM.Size = New System.Drawing.Size(322, 114)
         Me.btn1200PM.TabIndex = 63
-        Me.btn1200PM.Text = "12:00 PM"
+        Me.btn1200PM.Text = "12:00"
         Me.btn1200PM.UseVisualStyleBackColor = False
         '
         'btn1145AM
         '
         Me.btn1145AM.BackColor = System.Drawing.Color.LightGray
         Me.btn1145AM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1145AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1145AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1145AM.Location = New System.Drawing.Point(1482, 881)
         Me.btn1145AM.Name = "btn1145AM"
         Me.btn1145AM.Size = New System.Drawing.Size(322, 114)
         Me.btn1145AM.TabIndex = 62
-        Me.btn1145AM.Text = "11:45 AM"
+        Me.btn1145AM.Text = "11:45"
         Me.btn1145AM.UseVisualStyleBackColor = False
         '
         'btn1130AM
         '
         Me.btn1130AM.BackColor = System.Drawing.Color.LightGray
         Me.btn1130AM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1130AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1130AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1130AM.Location = New System.Drawing.Point(998, 881)
         Me.btn1130AM.Name = "btn1130AM"
         Me.btn1130AM.Size = New System.Drawing.Size(322, 114)
         Me.btn1130AM.TabIndex = 61
-        Me.btn1130AM.Text = "11:30 AM"
+        Me.btn1130AM.Text = "11:30"
         Me.btn1130AM.UseVisualStyleBackColor = False
         '
         'btn1115AM
         '
         Me.btn1115AM.BackColor = System.Drawing.Color.LightGray
         Me.btn1115AM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1115AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1115AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1115AM.Location = New System.Drawing.Point(532, 881)
         Me.btn1115AM.Name = "btn1115AM"
         Me.btn1115AM.Size = New System.Drawing.Size(322, 114)
         Me.btn1115AM.TabIndex = 60
-        Me.btn1115AM.Text = "11:15 AM"
+        Me.btn1115AM.Text = "11:15"
         Me.btn1115AM.UseVisualStyleBackColor = False
         '
         'btn1100AM
         '
         Me.btn1100AM.BackColor = System.Drawing.Color.LightGray
         Me.btn1100AM.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btn1100AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn1100AM.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn1100AM.Location = New System.Drawing.Point(58, 881)
         Me.btn1100AM.Name = "btn1100AM"
         Me.btn1100AM.Size = New System.Drawing.Size(322, 114)
         Me.btn1100AM.TabIndex = 59
-        Me.btn1100AM.Text = "11:00 AM"
+        Me.btn1100AM.Text = "11:00"
         Me.btn1100AM.UseVisualStyleBackColor = False
         '
         'frmAppointmentList
@@ -573,7 +559,6 @@ Partial Class frmAppointmentList
         Me.ClientSize = New System.Drawing.Size(2050, 1060)
         Me.Controls.Add(Me.pnlTop)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.btnCreateAppointment)
         Me.Controls.Add(Me.btnBack)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmAppointmentList"
@@ -585,8 +570,6 @@ Partial Class frmAppointmentList
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btnCreateAppointment As Button
     Friend WithEvents btnBack As Button
     Friend WithEvents Timer2 As Timer
     Friend WithEvents btnLogout As Button

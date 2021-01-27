@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmEditAppointment
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,20 @@ Partial Class frmEditAppointment
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.lblAddAppointment = New System.Windows.Forms.Label()
         Me.lblIdentityNo = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtEmailAddress = New System.Windows.Forms.TextBox()
+        Me.lblEmailAddress = New System.Windows.Forms.Label()
+        Me.mskContactNo = New System.Windows.Forms.MaskedTextBox()
+        Me.lblContactNo = New System.Windows.Forms.Label()
+        Me.mskIdentityNo = New System.Windows.Forms.MaskedTextBox()
+        Me.txtLastName = New System.Windows.Forms.TextBox()
+        Me.radExistingPatient = New System.Windows.Forms.RadioButton()
+        Me.radNewPatient = New System.Windows.Forms.RadioButton()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.lblFirstName = New System.Windows.Forms.Label()
         Me.lblLastName = New System.Windows.Forms.Label()
@@ -37,21 +45,14 @@ Partial Class frmEditAppointment
         Me.lblAddAppointmentDetail = New System.Windows.Forms.Label()
         Me.btnUpdateAppointment = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.radNewPatient = New System.Windows.Forms.RadioButton()
-        Me.radExistingPatient = New System.Windows.Forms.RadioButton()
-        Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.mskIdentityNo = New System.Windows.Forms.MaskedTextBox()
-        Me.mskContactNo = New System.Windows.Forms.MaskedTextBox()
-        Me.lblContactNo = New System.Windows.Forms.Label()
-        Me.txtEmailAddress = New System.Windows.Forms.TextBox()
-        Me.lblEmailAddress = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblConsultationDateL = New System.Windows.Forms.Label()
-        Me.lblConsultationTimeL = New System.Windows.Forms.Label()
-        Me.lblConsultationDate = New System.Windows.Forms.Label()
         Me.lblConsultationTime = New System.Windows.Forms.Label()
+        Me.lblConsultationDate = New System.Windows.Forms.Label()
+        Me.lblConsultationTimeL = New System.Windows.Forms.Label()
+        Me.lblConsultationDateL = New System.Windows.Forms.Label()
         Me.chkEnableEdit = New System.Windows.Forms.CheckBox()
+        Me.btnDeleteAppointment = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -112,6 +113,85 @@ Partial Class frmEditAppointment
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(514, 529)
         Me.Panel2.TabIndex = 43
+        '
+        'txtEmailAddress
+        '
+        Me.txtEmailAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmailAddress.Location = New System.Drawing.Point(109, 473)
+        Me.txtEmailAddress.Name = "txtEmailAddress"
+        Me.txtEmailAddress.Size = New System.Drawing.Size(304, 27)
+        Me.txtEmailAddress.TabIndex = 17
+        '
+        'lblEmailAddress
+        '
+        Me.lblEmailAddress.AutoSize = True
+        Me.lblEmailAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmailAddress.Location = New System.Drawing.Point(105, 450)
+        Me.lblEmailAddress.Name = "lblEmailAddress"
+        Me.lblEmailAddress.Size = New System.Drawing.Size(118, 20)
+        Me.lblEmailAddress.TabIndex = 16
+        Me.lblEmailAddress.Text = "Email Address"
+        '
+        'mskContactNo
+        '
+        Me.mskContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mskContactNo.Location = New System.Drawing.Point(109, 397)
+        Me.mskContactNo.Mask = "000-00000000"
+        Me.mskContactNo.Name = "mskContactNo"
+        Me.mskContactNo.Size = New System.Drawing.Size(304, 27)
+        Me.mskContactNo.TabIndex = 15
+        '
+        'lblContactNo
+        '
+        Me.lblContactNo.AutoSize = True
+        Me.lblContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContactNo.Location = New System.Drawing.Point(106, 374)
+        Me.lblContactNo.Name = "lblContactNo"
+        Me.lblContactNo.Size = New System.Drawing.Size(93, 20)
+        Me.lblContactNo.TabIndex = 14
+        Me.lblContactNo.Text = "Contact No"
+        '
+        'mskIdentityNo
+        '
+        Me.mskIdentityNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mskIdentityNo.Location = New System.Drawing.Point(106, 319)
+        Me.mskIdentityNo.Mask = "000000-00-0000"
+        Me.mskIdentityNo.Name = "mskIdentityNo"
+        Me.mskIdentityNo.Size = New System.Drawing.Size(304, 27)
+        Me.mskIdentityNo.TabIndex = 13
+        Me.mskIdentityNo.ValidatingType = GetType(Integer)
+        '
+        'txtLastName
+        '
+        Me.txtLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLastName.Location = New System.Drawing.Point(106, 247)
+        Me.txtLastName.Name = "txtLastName"
+        Me.txtLastName.Size = New System.Drawing.Size(304, 27)
+        Me.txtLastName.TabIndex = 12
+        '
+        'radExistingPatient
+        '
+        Me.radExistingPatient.AutoSize = True
+        Me.radExistingPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radExistingPatient.Location = New System.Drawing.Point(252, 30)
+        Me.radExistingPatient.Name = "radExistingPatient"
+        Me.radExistingPatient.Size = New System.Drawing.Size(146, 24)
+        Me.radExistingPatient.TabIndex = 11
+        Me.radExistingPatient.TabStop = True
+        Me.radExistingPatient.Text = "Existing Patient"
+        Me.radExistingPatient.UseVisualStyleBackColor = True
+        '
+        'radNewPatient
+        '
+        Me.radNewPatient.AutoSize = True
+        Me.radNewPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radNewPatient.Location = New System.Drawing.Point(114, 30)
+        Me.radNewPatient.Name = "radNewPatient"
+        Me.radNewPatient.Size = New System.Drawing.Size(120, 24)
+        Me.radNewPatient.TabIndex = 10
+        Me.radNewPatient.TabStop = True
+        Me.radNewPatient.Text = "New Patient"
+        Me.radNewPatient.UseVisualStyleBackColor = True
         '
         'txtFirstName
         '
@@ -204,7 +284,7 @@ Partial Class frmEditAppointment
         Me.btnUpdateAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdateAppointment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdateAppointment.ForeColor = System.Drawing.Color.White
-        Me.btnUpdateAppointment.Location = New System.Drawing.Point(706, 817)
+        Me.btnUpdateAppointment.Location = New System.Drawing.Point(741, 817)
         Me.btnUpdateAppointment.Name = "btnUpdateAppointment"
         Me.btnUpdateAppointment.Size = New System.Drawing.Size(172, 58)
         Me.btnUpdateAppointment.TabIndex = 44
@@ -220,85 +300,6 @@ Partial Class frmEditAppointment
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(514, 99)
         Me.Panel1.TabIndex = 42
-        '
-        'radNewPatient
-        '
-        Me.radNewPatient.AutoSize = True
-        Me.radNewPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radNewPatient.Location = New System.Drawing.Point(114, 30)
-        Me.radNewPatient.Name = "radNewPatient"
-        Me.radNewPatient.Size = New System.Drawing.Size(120, 24)
-        Me.radNewPatient.TabIndex = 10
-        Me.radNewPatient.TabStop = True
-        Me.radNewPatient.Text = "New Patient"
-        Me.radNewPatient.UseVisualStyleBackColor = True
-        '
-        'radExistingPatient
-        '
-        Me.radExistingPatient.AutoSize = True
-        Me.radExistingPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.radExistingPatient.Location = New System.Drawing.Point(252, 30)
-        Me.radExistingPatient.Name = "radExistingPatient"
-        Me.radExistingPatient.Size = New System.Drawing.Size(146, 24)
-        Me.radExistingPatient.TabIndex = 11
-        Me.radExistingPatient.TabStop = True
-        Me.radExistingPatient.Text = "Existing Patient"
-        Me.radExistingPatient.UseVisualStyleBackColor = True
-        '
-        'txtLastName
-        '
-        Me.txtLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastName.Location = New System.Drawing.Point(106, 247)
-        Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(304, 27)
-        Me.txtLastName.TabIndex = 12
-        '
-        'mskIdentityNo
-        '
-        Me.mskIdentityNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mskIdentityNo.Location = New System.Drawing.Point(106, 319)
-        Me.mskIdentityNo.Mask = "000000-00-0000"
-        Me.mskIdentityNo.Name = "mskIdentityNo"
-        Me.mskIdentityNo.Size = New System.Drawing.Size(304, 27)
-        Me.mskIdentityNo.TabIndex = 13
-        Me.mskIdentityNo.ValidatingType = GetType(Integer)
-        '
-        'mskContactNo
-        '
-        Me.mskContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mskContactNo.Location = New System.Drawing.Point(109, 397)
-        Me.mskContactNo.Mask = "000-00000000"
-        Me.mskContactNo.Name = "mskContactNo"
-        Me.mskContactNo.Size = New System.Drawing.Size(304, 27)
-        Me.mskContactNo.TabIndex = 15
-        '
-        'lblContactNo
-        '
-        Me.lblContactNo.AutoSize = True
-        Me.lblContactNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactNo.Location = New System.Drawing.Point(106, 374)
-        Me.lblContactNo.Name = "lblContactNo"
-        Me.lblContactNo.Size = New System.Drawing.Size(93, 20)
-        Me.lblContactNo.TabIndex = 14
-        Me.lblContactNo.Text = "Contact No"
-        '
-        'txtEmailAddress
-        '
-        Me.txtEmailAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEmailAddress.Location = New System.Drawing.Point(109, 473)
-        Me.txtEmailAddress.Name = "txtEmailAddress"
-        Me.txtEmailAddress.Size = New System.Drawing.Size(304, 27)
-        Me.txtEmailAddress.TabIndex = 17
-        '
-        'lblEmailAddress
-        '
-        Me.lblEmailAddress.AutoSize = True
-        Me.lblEmailAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmailAddress.Location = New System.Drawing.Point(105, 450)
-        Me.lblEmailAddress.Name = "lblEmailAddress"
-        Me.lblEmailAddress.Size = New System.Drawing.Size(118, 20)
-        Me.lblEmailAddress.TabIndex = 16
-        Me.lblEmailAddress.Text = "Email Address"
         '
         'Label1
         '
@@ -322,25 +323,15 @@ Partial Class frmEditAppointment
         Me.Panel3.Size = New System.Drawing.Size(513, 529)
         Me.Panel3.TabIndex = 49
         '
-        'lblConsultationDateL
+        'lblConsultationTime
         '
-        Me.lblConsultationDateL.AutoSize = True
-        Me.lblConsultationDateL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConsultationDateL.Location = New System.Drawing.Point(74, 30)
-        Me.lblConsultationDateL.Name = "lblConsultationDateL"
-        Me.lblConsultationDateL.Size = New System.Drawing.Size(167, 25)
-        Me.lblConsultationDateL.TabIndex = 2
-        Me.lblConsultationDateL.Text = "Consultation Date"
-        '
-        'lblConsultationTimeL
-        '
-        Me.lblConsultationTimeL.AutoSize = True
-        Me.lblConsultationTimeL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConsultationTimeL.Location = New System.Drawing.Point(74, 125)
-        Me.lblConsultationTimeL.Name = "lblConsultationTimeL"
-        Me.lblConsultationTimeL.Size = New System.Drawing.Size(170, 25)
-        Me.lblConsultationTimeL.TabIndex = 4
-        Me.lblConsultationTimeL.Text = "Consultation Time"
+        Me.lblConsultationTime.AutoSize = True
+        Me.lblConsultationTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConsultationTime.Location = New System.Drawing.Point(75, 155)
+        Me.lblConsultationTime.Name = "lblConsultationTime"
+        Me.lblConsultationTime.Size = New System.Drawing.Size(47, 24)
+        Me.lblConsultationTime.TabIndex = 6
+        Me.lblConsultationTime.Text = "Text"
         '
         'lblConsultationDate
         '
@@ -352,15 +343,25 @@ Partial Class frmEditAppointment
         Me.lblConsultationDate.TabIndex = 5
         Me.lblConsultationDate.Text = "Text"
         '
-        'lblConsultationTime
+        'lblConsultationTimeL
         '
-        Me.lblConsultationTime.AutoSize = True
-        Me.lblConsultationTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConsultationTime.Location = New System.Drawing.Point(75, 155)
-        Me.lblConsultationTime.Name = "lblConsultationTime"
-        Me.lblConsultationTime.Size = New System.Drawing.Size(47, 24)
-        Me.lblConsultationTime.TabIndex = 6
-        Me.lblConsultationTime.Text = "Text"
+        Me.lblConsultationTimeL.AutoSize = True
+        Me.lblConsultationTimeL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConsultationTimeL.Location = New System.Drawing.Point(74, 125)
+        Me.lblConsultationTimeL.Name = "lblConsultationTimeL"
+        Me.lblConsultationTimeL.Size = New System.Drawing.Size(170, 25)
+        Me.lblConsultationTimeL.TabIndex = 4
+        Me.lblConsultationTimeL.Text = "Consultation Time"
+        '
+        'lblConsultationDateL
+        '
+        Me.lblConsultationDateL.AutoSize = True
+        Me.lblConsultationDateL.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConsultationDateL.Location = New System.Drawing.Point(74, 30)
+        Me.lblConsultationDateL.Name = "lblConsultationDateL"
+        Me.lblConsultationDateL.Size = New System.Drawing.Size(167, 25)
+        Me.lblConsultationDateL.TabIndex = 2
+        Me.lblConsultationDateL.Text = "Consultation Date"
         '
         'chkEnableEdit
         '
@@ -372,12 +373,28 @@ Partial Class frmEditAppointment
         Me.chkEnableEdit.Text = "Edit Details"
         Me.chkEnableEdit.UseVisualStyleBackColor = True
         '
+        'btnDeleteAppointment
+        '
+        Me.btnDeleteAppointment.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnDeleteAppointment.Enabled = False
+        Me.btnDeleteAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDeleteAppointment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeleteAppointment.ForeColor = System.Drawing.Color.White
+        Me.btnDeleteAppointment.Location = New System.Drawing.Point(563, 817)
+        Me.btnDeleteAppointment.Name = "btnDeleteAppointment"
+        Me.btnDeleteAppointment.Size = New System.Drawing.Size(172, 58)
+        Me.btnDeleteAppointment.TabIndex = 57
+        Me.btnDeleteAppointment.Text = "Delete Appointment"
+        Me.btnDeleteAppointment.UseVisualStyleBackColor = False
+        Me.btnDeleteAppointment.Visible = False
+        '
         'frmEditAppointment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1131, 897)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnDeleteAppointment)
         Me.Controls.Add(Me.chkEnableEdit)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel3)
@@ -431,4 +448,5 @@ Partial Class frmEditAppointment
     Friend WithEvents lblConsultationTimeL As Label
     Friend WithEvents lblConsultationDateL As Label
     Friend WithEvents chkEnableEdit As CheckBox
+    Friend WithEvents btnDeleteAppointment As Button
 End Class

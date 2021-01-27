@@ -14,7 +14,7 @@ Public Class frmUpdateInventory
 
     Private Sub frmUpdateInventory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         chkEnableEdit.Checked = False
-        dtpExpiryDate.MinDate = DateTime.Today
+        ''dtpExpiryDate.MinDate = DateTime.Today
     End Sub
 
     Private Sub frmUpdateInventory_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -34,6 +34,7 @@ Public Class frmUpdateInventory
         mskUnitPrice.Text = m.UnitPrice
         txtQuantity.Text = m.Quantity
         dtpExpiryDate.Value = m.ExpiryDate
+        dtpExpiryDate.MinDate = DateTime.Today
     End Sub
 
     Private Sub btnUpdateDetail_Click(sender As Object, e As EventArgs) Handles btnUpdateDetail.Click

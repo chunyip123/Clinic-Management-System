@@ -163,6 +163,10 @@ Public Class frmUpdatePatient
 
         MessageBox.Show("Details of item " + SelectedId + " had been updated successfully.")
 
+        Dim c As UpdateCheck = db.UpdateChecks.FirstOrDefault(Function(o) o.TableName = "Patient")
+        c.GotUpdate = "Yes"
+        db.SubmitChanges()
+
         Me.Close()
 
     End Sub

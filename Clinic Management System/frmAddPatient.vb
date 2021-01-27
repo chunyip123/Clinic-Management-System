@@ -158,16 +158,21 @@ Public Class frmAddPatient
                 p.Address = txtAddress.Text
                 p.City = cboCity.Text
                 p.State = cboState.Text
-                p.PostCode = mskPostalCode.Text
+            p.PostCode = mskPostalCode.Text
+            p.Status = "Not Visiting"
 
-                ''Dim db As New CMSDatabaseDataContext()
-                db.Patients.InsertOnSubmit(p)
+            ''Dim db As New CMSDatabaseDataContext()
+            db.Patients.InsertOnSubmit(p)
                 db.SubmitChanges()
                 MessageBox.Show("Patient details of " & p.FirstName & " " & p.LastName & " had been added to list successfully.", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                ''NextPatientId += 1
+            ''NextPatientId += 1
 
-                ResetForm()
+            Dim c As UpdateCheck = db.UpdateChecks.FirstOrDefault(Function(o) o.TableName = "Patient")
+            c.GotUpdate = "Yes"
+            db.SubmitChanges()
+
+            ResetForm()
             End If
     End Sub
 

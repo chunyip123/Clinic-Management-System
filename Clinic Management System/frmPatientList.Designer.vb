@@ -51,7 +51,7 @@ Partial Class frmPatientList
         Me.lblPatientList.Font = New System.Drawing.Font("Microsoft Sans Serif", 19.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPatientList.Location = New System.Drawing.Point(35, 105)
         Me.lblPatientList.Name = "lblPatientList"
-        Me.lblPatientList.Size = New System.Drawing.Size(197, 39)
+        Me.lblPatientList.Size = New System.Drawing.Size(190, 38)
         Me.lblPatientList.TabIndex = 7
         Me.lblPatientList.Text = "Patient List"
         '
