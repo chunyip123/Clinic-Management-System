@@ -113,6 +113,12 @@
     <Compile Include="frmAppointmentList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmCollectionDetails.Designer.vb">
+      <DependentUpon>frmCollectionDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCollectionDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEditAppointment.Designer.vb">
       <DependentUpon>frmEditAppointment.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,12 @@
       <DependentUpon>frmAddPatient.vb</DependentUpon>
     </Compile>
     <Compile Include="frmAddPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedicineCollection.Designer.vb">
+      <DependentUpon>frmMedicineCollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicineCollection.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMenu.Designer.vb">
@@ -206,6 +218,9 @@
     <EmbeddedResource Include="frmAppointmentList.resx">
       <DependentUpon>frmAppointmentList.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCollectionDetails.resx">
+      <DependentUpon>frmCollectionDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditAppointment.resx">
       <DependentUpon>frmEditAppointment.vb</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddPatient.resx">
       <DependentUpon>frmAddPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicineCollection.resx">
+      <DependentUpon>frmMedicineCollection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>

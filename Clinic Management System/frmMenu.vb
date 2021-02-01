@@ -44,4 +44,9 @@ Public Class frmMenu
         Me.Hide()
         frmAppointmentList.Show()
     End Sub
+
+    Private Sub btnPayment_Click(sender As Object, e As EventArgs) Handles btnPayment.Click
+        Me.Hide()
+        frmMedicineCollection.Show()
+    End Sub
 End Class

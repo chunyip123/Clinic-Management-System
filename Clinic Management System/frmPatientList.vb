@@ -260,4 +260,28 @@ Public Class frmPatientList
             db.SubmitChanges()
         End If
     End Sub
+
+    Private Sub lblTime_Click(sender As Object, e As EventArgs) Handles lblTime.Click
+
+    End Sub
+
+    Private Sub lblUsername_Click(sender As Object, e As EventArgs) Handles lblUsername.Click
+
+    End Sub
+
+    Private Sub lblClinic_Click(sender As Object, e As EventArgs) Handles lblClinic.Click
+
+    End Sub
+
+    Private Sub pnlTop_Paint(sender As Object, e As PaintEventArgs) Handles pnlTop.Paint
+
+    End Sub
+
+    Private Sub lblPatientList_Click(sender As Object, e As EventArgs) Handles lblPatientList.Click
+
+    End Sub
+
+    Private Sub lblResultsNo_Click(sender As Object, e As EventArgs) Handles lblResultsNo.Click
+
+    End Sub
 End Class
