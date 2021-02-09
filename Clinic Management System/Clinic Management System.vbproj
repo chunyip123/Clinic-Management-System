@@ -144,6 +144,12 @@
     <Compile Include="frmAddPatient.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmMakePayment.Designer.vb">
+      <DependentUpon>frmMakePayment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMakePayment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMedicineCollection.Designer.vb">
       <DependentUpon>frmMedicineCollection.vb</DependentUpon>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddPatient.resx">
       <DependentUpon>frmAddPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMakePayment.resx">
+      <DependentUpon>frmMakePayment.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMedicineCollection.resx">
       <DependentUpon>frmMedicineCollection.vb</DependentUpon>
