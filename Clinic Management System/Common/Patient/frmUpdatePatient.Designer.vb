@@ -56,6 +56,7 @@ Partial Class frmUpdatePatient
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.mskPostalCode = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAddPatient = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -367,7 +368,7 @@ Partial Class frmUpdatePatient
         Me.btnUpdateDetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUpdateDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdateDetail.ForeColor = System.Drawing.Color.White
-        Me.btnUpdateDetail.Location = New System.Drawing.Point(734, 779)
+        Me.btnUpdateDetail.Location = New System.Drawing.Point(768, 779)
         Me.btnUpdateDetail.Name = "btnUpdateDetail"
         Me.btnUpdateDetail.Size = New System.Drawing.Size(156, 58)
         Me.btnUpdateDetail.TabIndex = 4
@@ -434,6 +435,19 @@ Partial Class frmUpdatePatient
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Address Information"
         '
+        'btnAddPatient
+        '
+        Me.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddPatient.ForeColor = System.Drawing.Color.White
+        Me.btnAddPatient.Location = New System.Drawing.Point(594, 779)
+        Me.btnAddPatient.Name = "btnAddPatient"
+        Me.btnAddPatient.Size = New System.Drawing.Size(156, 58)
+        Me.btnAddPatient.TabIndex = 23
+        Me.btnAddPatient.Text = "Add Patient"
+        Me.btnAddPatient.UseVisualStyleBackColor = False
+        '
         'frmUpdatePatient
         '
         Me.AcceptButton = Me.btnUpdateDetail
@@ -442,6 +456,7 @@ Partial Class frmUpdatePatient
         Me.CancelButton = Me.btnCancel
         Me.ClientSize = New System.Drawing.Size(1131, 849)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnAddPatient)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.chkEnableEdit)
@@ -498,4 +513,5 @@ Partial Class frmUpdatePatient
     Friend WithEvents mskAge As MaskedTextBox
     Friend WithEvents mskContactNo As MaskedTextBox
     Friend WithEvents mskPostalCode As MaskedTextBox
+    Friend WithEvents btnAddPatient As Button
 End Class

@@ -62,7 +62,7 @@
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
-        frmRecLogin.Show()
+        frmLogin.Show()
     End Sub
 
     Private Sub dgv_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellClick

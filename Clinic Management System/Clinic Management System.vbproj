@@ -63,7 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
@@ -95,107 +97,156 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CMSDatabase.dbml</DependentUpon>
     </Compile>
-    <Compile Include="frmAddInventory.Designer.vb">
+    <Compile Include="Common\Appointment\frmUpdateAppointment %28Empty%29.Designer.vb">
+      <DependentUpon>frmUpdateAppointment %28Empty%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Appointment\frmUpdateAppointment %28Empty%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Login\frmForgetPassword %28Empty%29.Designer.vb">
+      <DependentUpon>frmForgetPassword %28Empty%29.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Login\frmForgetPassword %28Empty%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Diagnosis Prescription\frmAddAppointment.Designer.vb">
+      <DependentUpon>frmAddAppointment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Diagnosis Prescription\frmAddAppointment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Diagnosis Prescription\frmAddPrescription.Designer.vb">
+      <DependentUpon>frmAddPrescription.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Diagnosis Prescription\frmAddPrescription.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Employee Maintenance %28In Progress%29\frmAddEmployee.Designer.vb">
+      <DependentUpon>frmAddEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Employee Maintenance %28In Progress%29\frmAddEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Employee Maintenance %28In Progress%29\frmEmployeeMain.Designer.vb">
+      <DependentUpon>frmEmployeeMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Employee Maintenance %28In Progress%29\frmEmployeeMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\Employee Maintenance %28In Progress%29\frmUpdateEmployee.Designer.vb">
+      <DependentUpon>frmUpdateEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Employee Maintenance %28In Progress%29\frmUpdateEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist\Inventory\frmAddInventory.Designer.vb">
       <DependentUpon>frmAddInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddInventory.vb">
+    <Compile Include="Receptionist\Inventory\frmAddInventory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPanel.Designer.vb">
+    <Compile Include="Receptionist\Panel\frmAddPanel.Designer.vb">
       <DependentUpon>frmAddPanel.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPanel.vb">
+    <Compile Include="Receptionist\Panel\frmAddPanel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAppointmentList.Designer.vb">
+    <Compile Include="Common\Appointment\frmAppointmentList.Designer.vb">
       <DependentUpon>frmAppointmentList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAppointmentList.vb">
+    <Compile Include="Common\Appointment\frmAppointmentList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCollectionDetails.Designer.vb">
+    <Compile Include="Receptionist\Medicine Collection\frmCollectionDetails.Designer.vb">
       <DependentUpon>frmCollectionDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCollectionDetails.vb">
+    <Compile Include="Receptionist\Medicine Collection\frmCollectionDetails.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditAppointment.Designer.vb">
+    <Compile Include="Doctor\Diagnosis Prescription\frmDiagPres.Designer.vb">
+      <DependentUpon>frmDiagPres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\Diagnosis Prescription\frmDiagPres.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Appointment\frmEditAppointment.Designer.vb">
       <DependentUpon>frmEditAppointment.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmEditAppointment.vb">
+    <Compile Include="Common\Appointment\frmEditAppointment.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInventoryList.Designer.vb">
+    <Compile Include="Receptionist\Inventory\frmInventoryList.Designer.vb">
       <DependentUpon>frmInventoryList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmInventoryList.vb">
+    <Compile Include="Receptionist\Inventory\frmInventoryList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.vb">
+    <Compile Include="Common\Login\frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.vb">
+    <Compile Include="Common\Login\frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPatient.Designer.vb">
-      <DependentUpon>frmAddPatient.vb</DependentUpon>
+    <Compile Include="Common\Patient\frmRegisterPatient.Designer.vb">
+      <DependentUpon>frmRegisterPatient.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPatient.vb">
+    <Compile Include="Common\Patient\frmRegisterPatient.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMedicineCollection.Designer.vb">
+    <Compile Include="Receptionist\Medicine Collection\frmMedicineCollection.Designer.vb">
       <DependentUpon>frmMedicineCollection.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMedicineCollection.vb">
+    <Compile Include="Receptionist\Medicine Collection\frmMedicineCollection.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenu.Designer.vb">
+    <Compile Include="Receptionist\frmMenu.Designer.vb">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmMenu.vb">
+    <Compile Include="Receptionist\frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPanelList.Designer.vb">
+    <Compile Include="Receptionist\Panel\frmPanelList.Designer.vb">
       <DependentUpon>frmPanelList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPanelList.vb">
+    <Compile Include="Receptionist\Panel\frmPanelList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPatientDetails %28Discard%29.Designer.vb">
+    <Compile Include="Common\Patient\frmPatientDetails %28Discard%29.Designer.vb">
       <DependentUpon>frmPatientDetails %28Discard%29.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPatientDetails %28Discard%29.vb">
+    <Compile Include="Common\Patient\frmPatientDetails %28Discard%29.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPatientList.Designer.vb">
+    <Compile Include="Common\Patient\frmPatientList.Designer.vb">
       <DependentUpon>frmPatientList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPatientList.vb">
+    <Compile Include="Common\Patient\frmPatientList.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdateInventory.Designer.vb">
+    <Compile Include="Receptionist\Inventory\frmUpdateInventory.Designer.vb">
       <DependentUpon>frmUpdateInventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdateInventory.vb">
+    <Compile Include="Receptionist\Inventory\frmUpdateInventory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdatePanel.Designer.vb">
+    <Compile Include="Receptionist\Panel\frmUpdatePanel.Designer.vb">
       <DependentUpon>frmUpdatePanel.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdatePanel.vb">
+    <Compile Include="Receptionist\Panel\frmUpdatePanel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdatePatient.Designer.vb">
+    <Compile Include="Common\Patient\frmUpdatePatient.Designer.vb">
       <DependentUpon>frmUpdatePatient.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdatePatient.vb">
+    <Compile Include="Common\Patient\frmUpdatePatient.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -209,52 +260,67 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmAddInventory.resx">
+    <EmbeddedResource Include="Doctor\Diagnosis Prescription\frmAddAppointment.resx">
+      <DependentUpon>frmAddAppointment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Diagnosis Prescription\frmAddPrescription.resx">
+      <DependentUpon>frmAddPrescription.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Employee Maintenance %28In Progress%29\frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\Employee Maintenance %28In Progress%29\frmEmployeeMain.resx">
+      <DependentUpon>frmEmployeeMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist\Inventory\frmAddInventory.resx">
       <DependentUpon>frmAddInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPanel.resx">
+    <EmbeddedResource Include="Receptionist\Panel\frmAddPanel.resx">
       <DependentUpon>frmAddPanel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAppointmentList.resx">
+    <EmbeddedResource Include="Common\Appointment\frmAppointmentList.resx">
       <DependentUpon>frmAppointmentList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCollectionDetails.resx">
+    <EmbeddedResource Include="Receptionist\Medicine Collection\frmCollectionDetails.resx">
       <DependentUpon>frmCollectionDetails.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditAppointment.resx">
+    <EmbeddedResource Include="Doctor\Diagnosis Prescription\frmDiagPres.resx">
+      <DependentUpon>frmDiagPres.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Appointment\frmEditAppointment.resx">
       <DependentUpon>frmEditAppointment.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInventoryList.resx">
+    <EmbeddedResource Include="Receptionist\Inventory\frmInventoryList.resx">
       <DependentUpon>frmInventoryList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Common\Login\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPatient.resx">
-      <DependentUpon>frmAddPatient.vb</DependentUpon>
+    <EmbeddedResource Include="Common\Patient\frmRegisterPatient.resx">
+      <DependentUpon>frmRegisterPatient.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMedicineCollection.resx">
+    <EmbeddedResource Include="Receptionist\Medicine Collection\frmMedicineCollection.resx">
       <DependentUpon>frmMedicineCollection.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenu.resx">
+    <EmbeddedResource Include="Receptionist\frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPanelList.resx">
+    <EmbeddedResource Include="Receptionist\Panel\frmPanelList.resx">
       <DependentUpon>frmPanelList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPatientDetails %28Discard%29.resx">
+    <EmbeddedResource Include="Common\Patient\frmPatientDetails %28Discard%29.resx">
       <DependentUpon>frmPatientDetails %28Discard%29.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPatientList.resx">
+    <EmbeddedResource Include="Common\Patient\frmPatientList.resx">
       <DependentUpon>frmPatientList.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdateInventory.resx">
+    <EmbeddedResource Include="Receptionist\Inventory\frmUpdateInventory.resx">
       <DependentUpon>frmUpdateInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdatePanel.resx">
+    <EmbeddedResource Include="Receptionist\Panel\frmUpdatePanel.resx">
       <DependentUpon>frmUpdatePanel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdatePatient.resx">
+    <EmbeddedResource Include="Common\Patient\frmUpdatePatient.resx">
       <DependentUpon>frmUpdatePatient.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -285,9 +351,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CMSDatabase.mdf" />
+    <Content Include="CMSDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="CMSDatabase_log.ldf">
       <DependentUpon>CMSDatabase.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +376,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
+    <Folder Include="Doctor\Account Maintenance %28Empty%29\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

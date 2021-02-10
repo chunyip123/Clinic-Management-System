@@ -3,7 +3,8 @@
 Public Class frmEditAppointment
 
     Public SelectedDate As String
-    Public SelectedTime As TimeSpan
+    ''Public SelectedTime As TimeSpan
+    Public SelectedTime As String
     Public SlotOccupied As String
     Public NextItemId As Integer
     Public ExistingSameId As Integer
@@ -260,7 +261,8 @@ Public Class frmEditAppointment
             a.ContactNo = mskContactNo.Text
             a.EmailAdd = txtEmailAddress.Text
             a.Date = lblConsultationDate.Text
-            a.Time = TimeSpan.Parse(lblConsultationTime.Text)
+            ''a.Time = TimeSpan.Parse(lblConsultationTime.Text)
+            a.Time = lblConsultationTime.Text
 
             Dim db As New CMSDatabaseDataContext()
             db.Appointments.InsertOnSubmit(a)

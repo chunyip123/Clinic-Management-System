@@ -32,7 +32,7 @@ Public Class frmInventoryList
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
-        frmRecLogin.Show()
+        frmLogin.Show()
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick

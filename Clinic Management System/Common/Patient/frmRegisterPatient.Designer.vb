@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmAddPatient
+Partial Class frmRegisterPatient
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -421,7 +421,7 @@ Partial Class frmAddPatient
         Me.lblAddPatient.TabIndex = 32
         Me.lblAddPatient.Text = "Add New Patient"
         '
-        'frmAddPatient
+        'frmRegisterPatient
         '
         Me.AcceptButton = Me.btnAddPatient
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -438,7 +438,7 @@ Partial Class frmAddPatient
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.lblEditPatient)
         Me.Controls.Add(Me.Panel1)
-        Me.Name = "frmAddPatient"
+        Me.Name = "frmRegisterPatient"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()

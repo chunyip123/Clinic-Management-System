@@ -1,6 +1,6 @@
 ﻿Imports System.Text
 
-Public Class frmAddPatient
+Public Class frmRegisterPatient
 
     Public NextPatientId As Integer
     Public ExistingSameResult As Integer
@@ -136,7 +136,7 @@ Public Class frmAddPatient
 
         ExistingSameResult = rs.Count()
 
-            If ExistingSameResult <> 0 Then
+        If ExistingSameResult <> 0 Then
 
                 MessageBox.Show("Patient details cound not be added to list as this IC number already exist in the system.", "Unable to Register", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -160,6 +160,7 @@ Public Class frmAddPatient
                 p.State = cboState.Text
             p.PostCode = mskPostalCode.Text
             p.Status = "Not Visiting"
+            p.Queue = 0
 
             ''Dim db As New CMSDatabaseDataContext()
             db.Patients.InsertOnSubmit(p)

@@ -18,18 +18,6 @@
       <Column Name="PostCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.MedicalRecord" Member="MedicalRecords">
-    <Type Name="MedicalRecord">
-      <Column Name="RecordId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PatientId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="MedicalId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="VisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="BloodPressure" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
-      <Column Name="Allergies" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Disease" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Caution" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Payment" Member="Payments">
     <Type Name="Payment">
       <Column Name="PaymentId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -57,23 +45,6 @@
       <Column Name="ExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Patient" Member="Patients">
-    <Type Name="Patient">
-      <Column Name="PatientId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="FirstName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="IcNo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Column Name="Age" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="Gender" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="EmailAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="City" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="State" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="PostCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Invoice" Member="Invoices">
     <Type Name="Invoice">
       <Column Name="InvoiceId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -94,19 +65,6 @@
       <Column Name="AmountTaken" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Appointment" Member="Appointments">
-    <Type Name="Appointment">
-      <Column Name="AppointId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PatientId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="FirstName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="IcNo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="EmailAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Time" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Medical" Member="Medicals">
     <Type Name="Medical">
       <Column Name="MedicalId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -120,6 +78,65 @@
       <Column Name="UpdateCheckId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TableName" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="GotUpdate" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RecToDoc" Member="RecToDocs">
+    <Type Name="RecToDoc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientId" Type="System.String" DbType="VarChar(10)" CanBeNull="false" />
+      <Column Name="IcNo" Type="System.String" DbType="VarChar(14)" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Appointment" Member="Appointments">
+    <Type Name="Appointment">
+      <Column Name="AppointId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IcNo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="EmailAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MedicalRecord" Member="MedicalRecords">
+    <Type Name="MedicalRecord">
+      <Column Name="RecordId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PatientId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="VisitDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BloodPressure" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Allergies" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Disease" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Caution" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MedicalTaken" Member="MedicalTakens">
+    <Type Name="MedicalTaken">
+      <Column Name="RecId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PatientId" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Medicine" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Taken" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Patient" Member="Patients">
+    <Type Name="Patient">
+      <Column Name="PatientId" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IcNo" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Age" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="ContactNo" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="EmailAdd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PostCode" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Queue" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

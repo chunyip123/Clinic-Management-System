@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmRecLogin
+Partial Class frmLogin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -136,7 +136,7 @@ Partial Class frmRecLogin
         Me.Panel1.Size = New System.Drawing.Size(1046, 567)
         Me.Panel1.TabIndex = 8
         '
-        'frmRecLogin
+        'frmLogin
         '
         Me.AcceptButton = Me.btnLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -146,7 +146,7 @@ Partial Class frmRecLogin
         Me.ClientSize = New System.Drawing.Size(1774, 996)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmRecLogin"
+        Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmLogin"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

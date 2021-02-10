@@ -30,7 +30,7 @@ Partial Class frmPatientList
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.lblClinic = New System.Windows.Forms.Label()
         Me.pnlTop = New System.Windows.Forms.Panel()
-        Me.btnAddPatient = New System.Windows.Forms.Button()
+        Me.btnRegisterPatient = New System.Windows.Forms.Button()
         Me.cboSortPatient = New System.Windows.Forms.ComboBox()
         Me.lblSearchPatient = New System.Windows.Forms.Label()
         Me.txtSearchPatient = New System.Windows.Forms.TextBox()
@@ -41,6 +41,7 @@ Partial Class frmPatientList
         Me.cboGender = New System.Windows.Forms.ComboBox()
         Me.cboSortSequence = New System.Windows.Forms.ComboBox()
         Me.btnDeletePatient = New System.Windows.Forms.Button()
+        Me.btnAddPatient = New System.Windows.Forms.Button()
         Me.pnlTop.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -113,18 +114,18 @@ Partial Class frmPatientList
         Me.pnlTop.Size = New System.Drawing.Size(2050, 83)
         Me.pnlTop.TabIndex = 8
         '
-        'btnAddPatient
+        'btnRegisterPatient
         '
-        Me.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAddPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddPatient.ForeColor = System.Drawing.Color.White
-        Me.btnAddPatient.Location = New System.Drawing.Point(41, 176)
-        Me.btnAddPatient.Name = "btnAddPatient"
-        Me.btnAddPatient.Size = New System.Drawing.Size(177, 67)
-        Me.btnAddPatient.TabIndex = 9
-        Me.btnAddPatient.Text = "Add Patient"
-        Me.btnAddPatient.UseVisualStyleBackColor = False
+        Me.btnRegisterPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnRegisterPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegisterPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegisterPatient.ForeColor = System.Drawing.Color.White
+        Me.btnRegisterPatient.Location = New System.Drawing.Point(41, 176)
+        Me.btnRegisterPatient.Name = "btnRegisterPatient"
+        Me.btnRegisterPatient.Size = New System.Drawing.Size(191, 67)
+        Me.btnRegisterPatient.TabIndex = 9
+        Me.btnRegisterPatient.Text = "Register Patient"
+        Me.btnRegisterPatient.UseVisualStyleBackColor = False
         '
         'cboSortPatient
         '
@@ -178,6 +179,7 @@ Partial Class frmPatientList
         Me.dgv.Location = New System.Drawing.Point(12, 341)
         Me.dgv.Name = "dgv"
         Me.dgv.ReadOnly = True
+        Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
         Me.dgv.Size = New System.Drawing.Size(2025, 639)
         Me.dgv.TabIndex = 16
@@ -192,7 +194,6 @@ Partial Class frmPatientList
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(156, 62)
         Me.btnBack.TabIndex = 17
-        Me.btnBack.Text = "Back to Dashboard"
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'lblResultsNo
@@ -245,11 +246,25 @@ Partial Class frmPatientList
         Me.btnDeletePatient.Text = "Delete Patient"
         Me.btnDeletePatient.UseVisualStyleBackColor = False
         '
+        'btnAddPatient
+        '
+        Me.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnAddPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddPatient.ForeColor = System.Drawing.Color.White
+        Me.btnAddPatient.Location = New System.Drawing.Point(1510, 986)
+        Me.btnAddPatient.Name = "btnAddPatient"
+        Me.btnAddPatient.Size = New System.Drawing.Size(156, 62)
+        Me.btnAddPatient.TabIndex = 22
+        Me.btnAddPatient.Text = "Add Patient"
+        Me.btnAddPatient.UseVisualStyleBackColor = False
+        '
         'frmPatientList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2050, 1060)
+        Me.ClientSize = New System.Drawing.Size(1942, 1060)
+        Me.Controls.Add(Me.btnAddPatient)
         Me.Controls.Add(Me.btnDeletePatient)
         Me.Controls.Add(Me.cboSortSequence)
         Me.Controls.Add(Me.cboGender)
@@ -260,7 +275,7 @@ Partial Class frmPatientList
         Me.Controls.Add(Me.txtSearchPatient)
         Me.Controls.Add(Me.lblSearchPatient)
         Me.Controls.Add(Me.cboSortPatient)
-        Me.Controls.Add(Me.btnAddPatient)
+        Me.Controls.Add(Me.btnRegisterPatient)
         Me.Controls.Add(Me.lblPatientList)
         Me.Controls.Add(Me.pnlTop)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -281,7 +296,7 @@ Partial Class frmPatientList
     Friend WithEvents btnLogout As Button
     Friend WithEvents lblClinic As Label
     Friend WithEvents pnlTop As Panel
-    Friend WithEvents btnAddPatient As Button
+    Friend WithEvents btnRegisterPatient As Button
     Friend WithEvents cboSortPatient As ComboBox
     Friend WithEvents lblSearchPatient As Label
     Friend WithEvents txtSearchPatient As TextBox
@@ -292,4 +307,5 @@ Partial Class frmPatientList
     Friend WithEvents cboGender As ComboBox
     Friend WithEvents cboSortSequence As ComboBox
     Friend WithEvents btnDeletePatient As Button
+    Friend WithEvents btnAddPatient As Button
 End Class

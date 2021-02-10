@@ -1,4 +1,6 @@
 ﻿Imports System.Text
+Imports System.Data.SqlClient
+Imports Clinic_Management_System.frmLogin
 
 Public Class frmUpdatePatient
 
@@ -205,5 +207,108 @@ Public Class frmUpdatePatient
             mskPostalCode.Enabled = False
             btnUpdateDetail.Enabled = False
         End If
+    End Sub
+
+    Private Sub btnAddPatient_Click(sender As Object, e As EventArgs) Handles btnAddPatient.Click
+        Dim db As New CMSDatabaseDataContext()
+        Dim str As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CMSDatabase.mdf;Integrated Security=True"
+        ''Dim sqlDel As String = "delete from RecToDoc"
+        ''Using Conn As New SqlConnection(str)
+        ''Using cmd As New SqlCommand(sqlDel, Conn)
+        ''Conn.Open()
+        ''cmd.ExecuteNonQuery()
+        ''End Using
+        ''End Using
+        ''Dim sql As String = "insert into RecToDoc values('" + p.PatientId + "','" + p.IcNo + "')"
+        ''Using Conn As New SqlConnection(str)
+        ''Using cmd As New SqlCommand(sql, Conn)
+        ''Conn.Open()
+        ''cmd.ExecuteNonQuery()
+        ''MessageBox.Show("Add Patient Successfully!")
+        ''End Using
+        ''End Using
+        Dim p As Patient = db.Patients.FirstOrDefault(Function(o) o.PatientId = SelectedId)
+
+        If p Is Nothing Then
+            MessageBox.Show("Patient not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            Me.Close()
+            Return
+        End If
+
+        Dim sqlChkVisit As String = "Select * from Patient where Status = 'Consulting'"
+        Using ConnChkVisit As New SqlConnection(str)
+            Using cmdChkVisit As New SqlCommand(sqlChkVisit, ConnChkVisit)
+                ConnChkVisit.Open()
+                Dim rd = cmdChkVisit.ExecuteReader
+                rd.Read()
+                If rd.HasRows = True Then
+                    Dim PatientID As String = rd("PatientId").ToString
+                    If p.PatientId = SelectedId And p.Status = "Consulting" Then
+                        MessageBox.Show("Patient already in the queue.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Else
+                        Dim sql As String = "update Patient set Status=@Status, Queue=@Queue where PatientId = '" + txtPatientId.Text + "'"
+                        Using Conn As New SqlConnection(str)
+                            Using cmd As New SqlCommand(sql, Conn)
+                                cmd.Parameters.Add("@Status", SqlDbType.VarChar).Value = "Consulting"
+                                cmd.Parameters.Add("@Queue", SqlDbType.Int).Value = frmPatientList.QueueNo + 1
+                                Conn.Open()
+                                cmd.ExecuteNonQuery()
+                                GlobalVariables.currentPatient = txtPatientId.Text
+                                MessageBox.Show("Add Patient Successfully!")
+                                ''PatientQueue.Enqueue(p.PatientId)
+                                Dim sqlCheck As String = "select * from Employee where UserName=@username"
+                                Using ConnCheck As New SqlConnection(str)
+                                    Using cmdCheck As New SqlCommand(sqlCheck, ConnCheck)
+                                        ConnCheck.Open()
+                                        cmdCheck.Parameters.AddWithValue("@username", GlobalVariables.loginuser)
+                                        Dim dr = cmdCheck.ExecuteReader
+                                        dr.Read()
+                                        If dr.HasRows = True Then
+                                            Dim employeeType As String = dr("EmployeeType").ToString
+                                            If employeeType = "Doctor" Then
+                                                frmDiagPres.Show()
+                                                frmDiagPres.Load_Page()
+                                                Me.Close()
+                                            End If
+                                        End If
+                                    End Using
+                                End Using
+                            End Using
+                        End Using
+                    End If
+                Else
+                    Dim sql As String = "update Patient set Status=@Status, Queue=@Queue where PatientId = '" + txtPatientId.Text + "'"
+                    Using Conn As New SqlConnection(str)
+                        Using cmd As New SqlCommand(sql, Conn)
+                            cmd.Parameters.Add("@Status", SqlDbType.VarChar).Value = "Consulting"
+                            cmd.Parameters.Add("@Queue", SqlDbType.Int).Value = frmPatientList.QueueNo + 1
+                            Conn.Open()
+                            cmd.ExecuteNonQuery()
+                            GlobalVariables.currentPatient = txtPatientId.Text
+                            MessageBox.Show("Add Patient Successfully!")
+                            ''PatientQueue.Enqueue(p.PatientId)
+                            Dim sqlCheck As String = "select * from Employee where UserName=@username"
+                            Using ConnCheck As New SqlConnection(str)
+                                Using cmdCheck As New SqlCommand(sqlCheck, ConnCheck)
+                                    ConnCheck.Open()
+                                    cmdCheck.Parameters.AddWithValue("@username", GlobalVariables.loginuser)
+                                    Dim dr = cmdCheck.ExecuteReader
+                                    dr.Read()
+                                    If dr.HasRows = True Then
+                                        Dim employeeType As String = dr("EmployeeType").ToString
+                                        If employeeType = "Doctor" Then
+                                            frmDiagPres.Show()
+                                            frmDiagPres.Load_Page()
+                                            Me.Close()
+                                        End If
+                                    End If
+                                End Using
+                            End Using
+                        End Using
+                    End Using
+                End If
+            End Using
+        End Using
     End Sub
 End Class

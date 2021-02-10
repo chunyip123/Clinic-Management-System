@@ -1,4 +1,4 @@
-﻿Imports Clinic_Management_System.frmRecLogin
+﻿Imports Clinic_Management_System.frmLogin
 
 Public Class frmMenu
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblClinic.Click
@@ -12,7 +12,7 @@ Public Class frmMenu
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
-        frmRecLogin.Show()
+        frmLogin.Show()
     End Sub
 
     Private Sub frmMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load

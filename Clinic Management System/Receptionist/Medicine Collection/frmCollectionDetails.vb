@@ -1,4 +1,5 @@
-﻿Public Class frmCollectionDetails
+﻿Imports System.Data.SqlClient
+Public Class frmCollectionDetails
 
     Public SelectedId As String
 
@@ -39,11 +40,30 @@
         lblContactNoR.Text = p.ContactNo
         lblEmailAddressR.Text = p.EmailAdd
 
+        ''Dim rs = From m In db.Inventories
+        ''Join l In db.Medicals On l.ItemId Equals m.ItemId
+        ''Where l.PatientId = SelectedId
+        ''Select Case m.ItemName, l.AmountTaken, l.ItemId
+
+        ''dgv.DataSource = rs
+
+
         Dim rs = From m In db.Inventories
-                 Join l In db.Medicals On l.ItemId Equals m.ItemId
-                 Where l.PatientId = SelectedId
-                 Select m.ItemName, l.AmountTaken, l.ItemId
+                 Join l In db.MedicalTakens On l.Medicine Equals m.ItemName
+                 Where l.PatientId = SelectedId And p.Status = "Consulting"
+                 Select m.ItemName, l.Amount
 
         dgv.DataSource = rs
+    End Sub
+
+    Private Sub btnProceedCheckout_Click(sender As Object, e As EventArgs) Handles btnProceedCheckout.Click
+        Dim str As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CMSDatabase.mdf;Integrated Security=True"
+        Dim sqlP As String = "update Patient set Status = 'Not Visiting' where PatientId = '" + lblPatientIdR.Text + "'"
+        Using Conn As New SqlConnection(str)
+            Using cmd As New SqlCommand(sqlP, Conn)
+                Conn.Open()
+                cmd.ExecuteNonQuery()
+            End Using
+        End Using
     End Sub
 End Class

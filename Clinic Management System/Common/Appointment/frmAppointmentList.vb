@@ -6,7 +6,7 @@
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
-        frmRecLogin.Show()
+        frmLogin.Show()
     End Sub
 
     Private Sub frmAppointmentList_Shown(sender As Object, e As EventArgs) Handles Me.Shown
@@ -228,7 +228,8 @@
     Private Sub TimeButtons_Click(sender As Object, e As EventArgs) Handles btn900AM.Click, btn915AM.Click, btn930AM.Click, btn945AM.Click, btn1000AM.Click, btn1015AM.Click, btn1030AM.Click, btn1045AM.Click, btn1100AM.Click, btn1115AM.Click, btn1130AM.Click, btn1145AM.Click, btn1200PM.Click, btn1215PM.Click, btn1230PM.Click, btn1245PM.Click, btn200PM.Click, btn215PM.Click, btn230PM.Click, btn245PM.Click, btn300PM.Click, btn315PM.Click, btn330PM.Click, btn345PM.Click, btn400PM.Click, btn415PM.Click, btn430PM.Click, btn445PM.Click
         Dim timeButton = DirectCast(sender, Button)
         frmEditAppointment.SelectedDate = mcAppointmentDate.SelectionRange.Start.ToShortDateString()
-        frmEditAppointment.SelectedTime = TimeSpan.Parse(timeButton.Text)
+        ''frmEditAppointment.SelectedTime = TimeSpan.Parse(timeButton.Text)
+        frmEditAppointment.SelectedTime = timeButton.Text
 
         If timeButton.ForeColor = Color.Red Then
             frmEditAppointment.SlotOccupied = "Yes"

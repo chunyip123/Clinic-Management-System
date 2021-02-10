@@ -1,10 +1,8 @@
 ﻿Imports System.ComponentModel
-
-Public Class frmPanelList
-
+Public Class frmEmployeeMain
     Public ClickedId As String
 
-    Private Sub frmPanelList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmEmployeeMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         BindData()
 
         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -28,12 +26,7 @@ Public Class frmPanelList
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Close()
-        frmMenu.Show()
-    End Sub
-
-    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
-        Me.Close()
-        frmRecLogin.Show()
+        frmDiagPres.Show()
     End Sub
 
     Private Sub dgv_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv.CellDoubleClick
@@ -47,7 +40,7 @@ Public Class frmPanelList
         End If
     End Sub
 
-    Private Sub btnAddOrganization_Click(sender As Object, e As EventArgs) Handles btnAddOrganization.Click
+    Private Sub btnAddEmployee_Click(sender As Object, e As EventArgs) Handles btnAddEmployee.Click
         Dim db As New CMSDatabaseDataContext()
 
         Dim rs = From c In db.PanelOrganisations
@@ -58,15 +51,15 @@ Public Class frmPanelList
         BindData()
     End Sub
 
-    Private Sub txtSearchOrganization_TextChanged(sender As Object, e As EventArgs) Handles txtSearchOrganization.TextChanged
-        If cboSearchOrganization.SelectedIndex = 0 Then
+    Private Sub txtSearchEmployee_TextChanged(sender As Object, e As EventArgs) Handles txtSearchEmployee.TextChanged
+        If cboSearchEmployee.SelectedIndex = 0 Then
             BindDataById()
-        ElseIf cboSearchOrganization.SelectedIndex = 1 Then
-            BindDataByOrgName()
-        ElseIf cboSearchOrganization.SelectedIndex = 2 Then
-            BindDataByOrgCode()
-        ElseIf cboSearchOrganization.SelectedIndex = 3 Then
-            BindDataByOrgContact()
+        ElseIf cboSearchEmployee.SelectedIndex = 1 Then
+            BindDataByEmpName()
+        ElseIf cboSearchEmployee.SelectedIndex = 2 Then
+            BindDataByEmpCode()
+        ElseIf cboSearchEmployee.SelectedIndex = 3 Then
+            BindDataByEmpContact()
         Else
             BindData()
         End If
@@ -75,72 +68,70 @@ Public Class frmPanelList
     Private Sub BindDataById()
         Dim db As New CMSDatabaseDataContext()
         Dim rs = From c In db.PanelOrganisations
-                 Where c.PanelId.Contains(txtSearchOrganization.Text)
+                 Where c.PanelId.Contains(txtSearchEmployee.Text)
 
         dgv.DataSource = rs
         lblResultsNo.Text = rs.Count().ToString("0 record(s)")
     End Sub
 
-    Private Sub BindDataByOrgName()
+    Private Sub BindDataByEmpName()
         Dim db As New CMSDatabaseDataContext()
         Dim rs = From c In db.PanelOrganisations
-                 Where c.OrgName.Contains(txtSearchOrganization.Text)
+                 Where c.OrgName.Contains(txtSearchEmployee.Text)
 
         dgv.DataSource = rs
         lblResultsNo.Text = rs.Count().ToString("0 record(s)")
     End Sub
 
-    Private Sub BindDataByOrgCode()
+    Private Sub BindDataByEmpCode()
         Dim db As New CMSDatabaseDataContext()
         Dim rs = From c In db.PanelOrganisations
-                 Where c.OrgCode.Contains(txtSearchOrganization.Text)
+                 Where c.OrgCode.Contains(txtSearchEmployee.Text)
 
         dgv.DataSource = rs
         lblResultsNo.Text = rs.Count().ToString("0 record(s)")
     End Sub
 
-    Private Sub BindDataByOrgContact()
+    Private Sub BindDataByEmpContact()
         Dim db As New CMSDatabaseDataContext()
         Dim rs = From c In db.PanelOrganisations
-                 Where c.ContactNo.Contains(txtSearchOrganization.Text)
+                 Where c.ContactNo.Contains(txtSearchEmployee.Text)
 
         dgv.DataSource = rs
         lblResultsNo.Text = rs.Count().ToString("0 record(s)")
     End Sub
 
     Private Sub ResetField()
-        txtSearchOrganization.Clear()
+        txtSearchEmployee.Clear()
     End Sub
 
-    Private Sub cboSearchOrganization_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSearchOrganization.SelectedIndexChanged
+    Private Sub cboSearchEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSearchEmployee.SelectedIndexChanged
         BindData()
         ResetField()
     End Sub
 
-
-
     Private Sub cboSortSequence_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSortSequence.SelectedIndexChanged
         If cboSortSequence.SelectedIndex = 0 Then
-            If cboSortPanel.SelectedIndex = 0 Then
+            If cboSortEmployee.SelectedIndex = 0 Then
                 dgv.Sort(dgv.Columns(1), ListSortDirection.Ascending)
-            ElseIf cboSortPanel.SelectedIndex = 1 Then
+            ElseIf cboSortEmployee.SelectedIndex = 1 Then
                 dgv.Sort(dgv.Columns(2), ListSortDirection.Ascending)
-            ElseIf cboSortPanel.SelectedIndex = 2 Then
+            ElseIf cboSortEmployee.SelectedIndex = 2 Then
                 dgv.Sort(dgv.Columns(3), ListSortDirection.Ascending)
             End If
         ElseIf cboSortSequence.SelectedIndex = 1 Then
-            If cboSortPanel.SelectedIndex = 0 Then
+            If cboSortEmployee.SelectedIndex = 0 Then
                 dgv.Sort(dgv.Columns(1), ListSortDirection.Descending)
-            ElseIf cboSortPanel.SelectedIndex = 1 Then
+            ElseIf cboSortEmployee.SelectedIndex = 1 Then
                 dgv.Sort(dgv.Columns(2), ListSortDirection.Descending)
-            ElseIf cboSortPanel.SelectedIndex = 2 Then
+            ElseIf cboSortEmployee.SelectedIndex = 2 Then
                 dgv.Sort(dgv.Columns(3), ListSortDirection.Descending)
             End If
         End If
     End Sub
 
-    Private Sub cboSortPanel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSortPanel.SelectedIndexChanged
-        If cboSortPanel.SelectedIndex <> -1 Then
+    Private Sub cboSortEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSortEmployee.SelectedIndexChanged
+        If cboSortEmployee.SelectedIndex <> -1 Then
             cboSortSequence.Enabled = True
             cboSortSequence.SelectedIndex = -1
             BindData()
@@ -149,7 +140,7 @@ Public Class frmPanelList
         End If
     End Sub
 
-    Private Sub btnDeleteOrganization_Click(sender As Object, e As EventArgs) Handles btnDeleteOrganization.Click
+    Private Sub btnDeleteOrganization_Click(sender As Object, e As EventArgs) Handles btnDeleteEmployee.Click
         Dim db As New CMSDatabaseDataContext()
         Dim c As PanelOrganisation = db.PanelOrganisations.FirstOrDefault(Function(o) o.PanelId = ClickedId)
 

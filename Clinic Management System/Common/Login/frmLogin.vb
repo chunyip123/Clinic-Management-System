@@ -1,11 +1,12 @@
 ﻿Imports System.Text
 Imports System.Data.SqlClient
 
-Public Class frmRecLogin
+Public Class frmLogin
 
     Public Class GlobalVariables
         Public Shared loginuser As String
         Public Shared usertypename As String
+        Public Shared currentPatient As String
     End Class
 
     Private Sub frmRecLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -40,18 +41,28 @@ Public Class frmRecLogin
 
     Private Sub Check_Database()
         Dim str As String = "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CMSDatabase.mdf;Integrated Security=True"
-        Dim sql As String = "select count(*) from Employee where UserName=@username and Password=@password"
+        Dim sql As String = "select * from Employee where UserName=@username and Password=@password"
         Using Conn As New SqlConnection(str)
             Using cmd As New SqlCommand(sql, Conn)
                 Conn.Open()
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text)
                 cmd.Parameters.AddWithValue("@password", txtPassword.Text)
-                Dim value = cmd.ExecuteScalar()
-                If value > 0 Then
+                ''Dim value = cmd.ExecuteScalar()
+                Dim dr = cmd.ExecuteReader
+                dr.Read()
+                ''If value > 0 Then
+                If dr.HasRows = True Then
                     GlobalVariables.loginuser = txtUsername.Text
-                    Me.Hide()
-                    frmMenu.Show()
-                    ''MessageBox.Show("Login sucessfully!")
+                    Dim employeeType As String = dr("EmployeeType").ToString
+                    If employeeType = "Receptionist" Then
+                        Me.Hide()
+                        frmMenu.Show()
+                        ''MessageBox.Show("Login sucessfully!")
+                    ElseIf employeeType = "Doctor" Then
+                        Me.Hide()
+                        frmDiagPres.Show()
+                        ''MessageBox.Show("Login sucessfully!")
+                    End If
                 Else
                     MessageBox.Show("Please key in the valid Username or Password.")
                 End If

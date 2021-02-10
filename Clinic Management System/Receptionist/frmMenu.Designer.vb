@@ -170,7 +170,7 @@ Partial Class frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2050, 1060)
+        Me.ClientSize = New System.Drawing.Size(1942, 1060)
         Me.Controls.Add(Me.btnPanel)
         Me.Controls.Add(Me.btnInventory)
         Me.Controls.Add(Me.btnPayment)

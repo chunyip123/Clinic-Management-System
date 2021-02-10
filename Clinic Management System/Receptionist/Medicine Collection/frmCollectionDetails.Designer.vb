@@ -350,6 +350,7 @@ Partial Class frmCollectionDetails
         Me.dgv.Location = New System.Drawing.Point(48, 545)
         Me.dgv.Name = "dgv"
         Me.dgv.ReadOnly = True
+        Me.dgv.RowHeadersWidth = 51
         Me.dgv.RowTemplate.Height = 24
         Me.dgv.Size = New System.Drawing.Size(1952, 427)
         Me.dgv.TabIndex = 48
@@ -370,7 +371,7 @@ Partial Class frmCollectionDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2050, 1060)
+        Me.ClientSize = New System.Drawing.Size(1942, 1060)
         Me.Controls.Add(Me.chkCollectionDone)
         Me.Controls.Add(Me.dgv)
         Me.Controls.Add(Me.lblMedicineToCollect)
