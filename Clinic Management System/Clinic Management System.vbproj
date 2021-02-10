@@ -194,7 +194,7 @@
     <Compile Include="Common\Patient\frmRegisterPatient.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Receptionist\Medicine Collection\frmMedicineCollection.Designer.vb">
+    <Compile Include="frmMedicineCollection.Designer.vb">
       <DependentUpon>frmMedicineCollection.vb</DependentUpon>
     </Compile>
     <Compile Include="Receptionist\Medicine Collection\frmMedicineCollection.vb">
@@ -299,7 +299,7 @@
     <EmbeddedResource Include="Common\Patient\frmRegisterPatient.resx">
       <DependentUpon>frmRegisterPatient.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Receptionist\Medicine Collection\frmMedicineCollection.resx">
+    <EmbeddedResource Include="frmMedicineCollection.resx">
       <DependentUpon>frmMedicineCollection.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Receptionist\frmMenu.resx">
